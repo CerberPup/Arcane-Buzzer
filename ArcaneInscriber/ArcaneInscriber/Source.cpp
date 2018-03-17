@@ -1,9 +1,12 @@
 #include <iostream>
 #include <SFML\Graphics.hpp>
+#include "Logger.cpp"
+
 
 using namespace std;
 
 int main() {
 	sf::VideoMode t = sf::VideoMode::getDesktopMode();
-	cout << t.height<<" "<<t.width;
+	Logger::log("Rozmiar ekranu", t.width, t.height);
+	getchar();
 }
