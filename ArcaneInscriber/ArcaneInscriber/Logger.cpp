@@ -1,4 +1,5 @@
 #include <iostream>
+#define LOG(...) Logger::log(__VA_ARGS__)
 
 class Logger
 {
@@ -13,8 +14,8 @@ private:
 		logs(argTail...);
 	}
 public:
-	template <class B,class ...A> static void log(B te,A... argHead) {
-		std::cerr << te <<": ";
+	template <class File,class A,class ...B> static void log(File file,A note,B... argHead) {
+		std::cerr << note <<": ";
 		logs(argHead...);
 	}
 };
