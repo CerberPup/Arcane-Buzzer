@@ -4,6 +4,7 @@
 #include "Engine.h"
 #include <Windows.h>
 #include <map>
+#include "Menu.h"
 
 
 using namespace std;
@@ -16,15 +17,16 @@ void splash(Engine &e) {
 	}
 	sf::Text title("Tytul", font, 80);
 	title.setStyle(sf::Text::Bold);
-	title.setPosition(e.width / 2 - title.getGlobalBounds().width / 2, e.height / 2);
-	sf::Color c(255, 255, 255, 0);
+	title.setPosition(e.width / 2 - title.getGlobalBounds().width / 2, e.height / 4);
+	sf::Color c(255,255,255, 0);
 	title.setFillColor(c);
-	for (int i = 0; i < 85; i++)
+	for (int i = 0; i < 46; i++)
 	{
-		e.window.clear();
+		e.window.clear(sf::Color(23, 23, 23, 255));
 		e.window.draw(title);
 		e.window.display();
 		c.a += 3;
+		Sleep(30);
 		title.setFillColor(c);
 	}
 }
@@ -46,11 +48,13 @@ int main() {
 			break;
 		}
 		case Engine::State::MAINMENU: {
+			Menu().Run();
 			//Menu. Po wcisnieciu start zmienia state na game
-			Engine::state = Engine::State::EXIT;
+			
 			break;
 		}
 		case Engine::State::GAME: {
+			Engine::state = Engine::State::EXIT;
 			//glowna petla gry. Osobne watki na przechwytywanie inputu, draw frame, kolizje, animacje
 			break;
 		}

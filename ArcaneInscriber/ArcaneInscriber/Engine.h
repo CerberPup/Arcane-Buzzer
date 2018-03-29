@@ -2,8 +2,10 @@
 #include <SFML\Graphics.hpp>
 class Engine
 {
+private:
+	
 public:
-	enum State{SPLASH,MAINMENU,GAME,EXIT};
+	enum State { SPLASH, MAINMENU, GAME, EXIT };
 	static State state;
 	const unsigned short width;
 	const unsigned short height;
@@ -11,4 +13,3 @@ public:
 	Engine(int w, int h);
 	~Engine();
 };
-
