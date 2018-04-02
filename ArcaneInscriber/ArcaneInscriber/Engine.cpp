@@ -43,6 +43,12 @@ void Engine::setTexture(std::string Path, std::string Name)
 	
 }
 
+void Engine::Physic(Physics* obj,float& elapsed) {
+
+
+
+}
+
 Engine::Engine(int w, int h) :width(w), height(h)
 {
 	window.create(sf::VideoMode(w, h), "Gra",sf::Style::Fullscreen);

@@ -4,6 +4,7 @@
 #include <map>
 #include <string>
 #include <sys\stat.h>
+#include "Physics.h"
 class Engine
 {
 private:
@@ -14,7 +15,9 @@ public:
 	const unsigned short width;
 	const unsigned short height;
 	static std::shared_ptr<sf::Texture> getTexture(std::string Name);
-	static void setTexture(std::string Path, std::string Name);//Path,Name
+	static void setTexture(std::string Path, std::string Name);
+	static void Physic(Physics* obj, float& elapsed);
+	//Path,Name
 	static sf::RenderWindow window;
 	Engine(int w, int h);
 	~Engine();

@@ -1,25 +1,37 @@
 #include "Game.h"
-
+#include <vector>
 
 Game::Game()
 {
 	clockphysic.restart();
-	animable.push_back(player);
-	//physicLoop = new std::thread((&Game::PhysicsLoop), this);
-	//animationLoop = new std::thread((&Game::AnimationLoop), this);
+	animable.push_back(&player);
+	physics.push_back(&player);
+	doPhysics = true;
+	doAnimate = true;
+	physicLoop = new std::thread((&Game::PhysicsLoop), this);
+	animationLoop = new std::thread((&Game::AnimationLoop), this);
 }
 
 
 Game::~Game()
 {
-
+	doAnimate = false;
+	doPhysics = false;
+	animationLoop->join();
+	physicLoop->join();
+	delete animationLoop;
+	delete physicLoop;
 }
 
 void Game::PhysicsLoop()
 {
-	while (true) {
-		sf::Time elapsed = clockphysic.getElapsedTime();
+	while (doPhysics) {
+		float elapsed = clockphysic.getElapsedTime().asSeconds();
 		clockphysic.restart();
+		for (Physics* var : physics)
+		{
+			Engine::Physic(var, elapsed);
+		}
 		//player.physic(elapsed.asSeconds());
 		Sleep(10);
 	}
@@ -27,9 +39,11 @@ void Game::PhysicsLoop()
 
 void Game::AnimationLoop()
 {
-	while (true) {
-		//wonsz.update();
-		//player.update();
+	while (doAnimate) {
+		for (Animable* var : animable)
+		{
+			var->Update();
+		}
 		Sleep(100);
 		//cout << "anim" << endl;
 	}
@@ -45,10 +59,16 @@ void Game::Run()
 
 		while (Engine::window.pollEvent(event))
 		{
-			if (event.type == sf::Event::Closed || event.type == sf::Event::KeyPressed &&
-				event.key.code == sf::Keyboard::Escape)
+			if (event.type == sf::Event::Closed
+				|| event.type == sf::Event::KeyPressed
+				&& event.key.code == sf::Keyboard::Escape) {
 				Engine::state = Engine::State::EXIT;
+				return;
+			}
 
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+			player.onground = true;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 		{
@@ -61,7 +81,7 @@ void Game::Run()
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
 			if (player.sprite.getPosition().x > 0) {
-				//if (player.onground)
+				if (player.onground)
 				player.animation = Player::LEFT;
 				/*if (player.velocity.x > -200)
 				player.velocity.x -= 50;*/
@@ -81,7 +101,7 @@ void Game::Run()
 			if (player.sprite.getPosition().x < 1300) {
 				/*if (player.velocity.x < 200)
 				player.velocity.x += 50;*/
-				//if (player.onground)
+				if (player.onground)
 				player.animation = Player::RIGHT;
 			}
 			else {

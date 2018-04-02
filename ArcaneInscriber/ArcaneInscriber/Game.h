@@ -10,8 +10,9 @@
 class Game
 {
 private:
-	
-	std::list<std::function<void()>> animable;
+	bool doAnimate, doPhysics;
+	std::list<Animable*> animable;
+	std::list<Physics*> physics;
 	Player player;
 	sf::Clock clockphysic;
 	std::thread* physicLoop;

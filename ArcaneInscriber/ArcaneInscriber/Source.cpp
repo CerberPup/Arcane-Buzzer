@@ -58,7 +58,8 @@ int main() {
 			break;
 		}
 		case Engine::State::MAINMENU: {
-			Menu().Run();
+			Menu menu;
+			menu.Run();
 			//Menu. Po wcisnieciu start zmienia state na game
 			
 			break;
@@ -66,7 +67,7 @@ int main() {
 		case Engine::State::GAME: {
 			Game gra;
 			gra.Run();
-			Engine::state = Engine::State::EXIT;
+			Engine::state = Engine::State::MAINMENU;
 			//glowna petla gry. Osobne watki na przechwytywanie inputu, draw frame, kolizje, animacje
 			break;
 		}

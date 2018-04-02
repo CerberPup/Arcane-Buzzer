@@ -4,7 +4,7 @@
 #include "Physics.h"
 #include "animable.h"
 
-class Player :public sf::Transformable , public sf::Drawable, public Animable
+class Player :public sf::Transformable , public sf::Drawable, public Animable,public Physics
 {
 private:
 	sf::Texture* texture;
