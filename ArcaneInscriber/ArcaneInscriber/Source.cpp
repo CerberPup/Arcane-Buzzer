@@ -1,7 +1,8 @@
 #include <iostream>
 #include <SFML\Graphics.hpp>
-#include "Logger.cpp"
+#include "Logger.h"
 #include "Engine.h"
+#include "Game.h"
 #include <Windows.h>
 #include <map>
 #include "Menu.h"
@@ -31,12 +32,21 @@ void splash(Engine &e) {
 	}
 }
 
+void initResources() {
+	try {
+		Engine::setTexture("Resources/City.png", "City");
+		Engine::setTexture("Resources/characters.png", "playerModels");
+	}
+	catch (exception ex) {
+		cout << ex.what() << endl;
+	}
+}
+
 int main() {
 	sf::VideoMode t = sf::VideoMode::getDesktopMode();
-	LOG("Rozmiar ekranu", t.width, t.height);
+	//LOG("Rozmiar ekranu", t.width, t.height);
 	Engine e(t.width, t.height);
-
-	map<string, sf::Texture> Texturki;
+	initResources();
 
 	while (e.window.isOpen()) {
 		switch (Engine::state)
@@ -54,6 +64,8 @@ int main() {
 			break;
 		}
 		case Engine::State::GAME: {
+			Game gra;
+			gra.Run();
 			Engine::state = Engine::State::EXIT;
 			//glowna petla gry. Osobne watki na przechwytywanie inputu, draw frame, kolizje, animacje
 			break;
