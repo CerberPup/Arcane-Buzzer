@@ -1,6 +1,6 @@
 #include "Engine.h"
 #include "Logger.h"
-
+#include "Entity.h"
 
 
 std::shared_ptr<sf::Texture > Engine::getTexture(std::string Name)
@@ -42,11 +42,35 @@ void Engine::setTexture(std::string Path, std::string Name)
 	
 	
 }
-
-void Engine::Physic(Physics* obj,float& elapsed) {
-
-
-
+#define Gravity 9810
+void Engine::Physic(Physics* obj,float& elapsed)
+{
+	if (Entity* ent = dynamic_cast<Entity*>(obj))
+	{
+		sf::Vector2f position = obj->getPosition();
+		sf::Vector2f velocity = obj->getVelocity();
+		if (!obj->onGround)
+			velocity.y /= elapsed;//m/s^2
+			velocity.y += Gravity;
+			velocity.y *= elapsed;
+		float halfScreenY = 19 * 32;
+		/*if (position.y > halfScreenY) {
+			//sprite.setPosition(position.x, halfScreenY - 1);
+			obj->onGround = true;
+			velocity.y = 0;
+		}
+		if (velocity.x > 1 || velocity.x < -1) {
+			velocity.x += 8 * (velocity.x > 0 ? -1 : 1);
+		}
+		else {
+			velocity.x = 0;
+		}*/
+		sf::Vector2f distance(velocity);
+		distance.x *= elapsed;
+		distance.y *= elapsed;
+		obj->move(distance);
+		ent->sprite.setPosition(obj->getPosition());
+	}
 }
 
 Engine::Engine(int w, int h) :width(w), height(h)

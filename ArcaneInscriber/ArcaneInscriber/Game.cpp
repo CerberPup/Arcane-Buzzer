@@ -4,8 +4,8 @@
 Game::Game()
 {
 	clockphysic.restart();
-	animable.push_back(&player);
-	physics.push_back(&player);
+	animationList.push_back(&player);
+	physicsList.push_back(&player);
 	doPhysics = true;
 	doAnimate = true;
 	physicLoop = new std::thread((&Game::PhysicsLoop), this);
@@ -28,7 +28,7 @@ void Game::PhysicsLoop()
 	while (doPhysics) {
 		float elapsed = clockphysic.getElapsedTime().asSeconds();
 		clockphysic.restart();
-		for (Physics* var : physics)
+		for (Physics* var : physicsList)
 		{
 			Engine::Physic(var, elapsed);
 		}
@@ -40,7 +40,7 @@ void Game::PhysicsLoop()
 void Game::AnimationLoop()
 {
 	while (doAnimate) {
-		for (Animable* var : animable)
+		for (Animable* var : animationList)
 		{
 			var->Update();
 		}
@@ -68,21 +68,22 @@ void Game::Run()
 
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-			player.onground = true;
+			player.onGround = true;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 		{
-			if (player.onground) {
-				player.onground = false;
+			if (player.onGround) {
+				player.onGround = false;
 				player.animation = Player::JUMP;
-				//player.velocity.y = -600;
+				player.setVelocity(sf::Vector2f(0,-60));
 			}
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
+			player.Face(Player::Direction::LEFT);
 			if (player.sprite.getPosition().x > 0) {
-				if (player.onground)
-				player.animation = Player::LEFT;
+				if (player.onGround&&player.canAnimate())
+				player.animation = Player::MOVE;
 				/*if (player.velocity.x > -200)
 				player.velocity.x -= 50;*/
 				if (posX > 0)
@@ -98,11 +99,12 @@ void Game::Run()
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
+			player.Face(Player::Direction::RIGHT);
 			if (player.sprite.getPosition().x < 1300) {
 				/*if (player.velocity.x < 200)
 				player.velocity.x += 50;*/
-				if (player.onground)
-				player.animation = Player::RIGHT;
+				if (player.onGround&&player.canAnimate())
+				player.animation = Player::MOVE;
 			}
 			else {
 				player.sprite.setPosition(1300, player.sprite.getPosition().y);

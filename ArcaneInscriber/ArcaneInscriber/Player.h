@@ -2,22 +2,27 @@
 #include <SFML\Graphics.hpp>
 #include "Engine.h"
 #include "Physics.h"
-#include "animable.h"
+#include "Animable.h"
+#include "Entity.h"
 
-class Player :public sf::Transformable , public sf::Drawable, public Animable,public Physics
+class Player :public sf::Transformable , public sf::Drawable, public Animable,public Physics,public Entity
 {
-private:
-	sf::Texture* texture;
-	virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 public:
-	bool onground;
-	int animation;
-	sf::Sprite sprite;
 	enum Animation {
-		LEFT, RIGHT, JUMP, IDDLE
+		MOVE, JUMP, IDDLE
 	};
+	enum Direction {
+		RIGHT, LEFT
+	};
+	bool canAnimate();
+	void Face(Direction d);
 	virtual void Update();
 	Player();
 	~Player();
+
+private:
+	sf::Texture* texture;
+	Direction lastDir;
+	virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 };
 

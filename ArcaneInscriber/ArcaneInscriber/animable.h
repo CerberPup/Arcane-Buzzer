@@ -1,13 +1,10 @@
 #pragma once
 class Animable
 {
-private:
-	
-
 public:
-	int offset;
+	int animation; //Use enum for var
 	int animationcounter;
-	Animable();
+	virtual bool canAnimate() = 0;
 	virtual ~Animable();
 	virtual void Update() = 0;
 };
