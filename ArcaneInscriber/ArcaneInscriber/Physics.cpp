@@ -1,13 +1,9 @@
 #include "Physics.h"
-
-Physics::Physics(float _mass, float _friction, sf::Vector2f _position, sf::Vector2f _velocity):mass(_mass),friction(_friction),position(_position),velocity(_velocity)
+#include "Logger.h"
+Physics::Physics(float _friction, sf::Vector2f _position, sf::Vector2f _velocity, float _maxXVelocity):friction(_friction),position(_position),velocity(_velocity),maxXVelocity(_maxXVelocity)
 {
 }
 
-float Physics::getMass()
-{
-	return mass;
-}
 
 float Physics::getFriction()
 {
@@ -22,11 +18,6 @@ sf::Vector2f Physics::getPosition()
 sf::Vector2f Physics::getVelocity()
 {
 	return velocity;
-}
-
-void Physics::setMass(float _mass)
-{
-	mass = _mass;
 }
 
 void Physics::setFriction(float _friction)
@@ -46,7 +37,22 @@ void Physics::setVelocity(sf::Vector2f _velocity)
 
 void Physics::addVelocity(sf::Vector2f _velocity)
 {
+	if (_velocity.x < 0) {
+		float max = velocity.x + maxXVelocity;
+		if (max<-_velocity.x)
+			_velocity.x = -max;
+	}
+	else if(_velocity.x > 0){
+		float max = maxXVelocity - velocity.x;
+		if (max < _velocity.x)
+			_velocity.x = max;
+	}
 	velocity += _velocity;
+}
+
+float Physics::getMaxXVelocity()
+{
+	return maxXVelocity;
 }
 
 void Physics::move(sf::Vector2f _position)

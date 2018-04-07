@@ -1,5 +1,7 @@
 #include "Game.h"
 #include <vector>
+#include <mutex>
+#include "Logger.h"
 
 Game::Game()
 {
@@ -30,7 +32,9 @@ void Game::PhysicsLoop()
 		clockphysic.restart();
 		for (Physics* var : physicsList)
 		{
+			var->lock.lock();
 			Engine::Physic(var, elapsed);
+			var->lock.unlock();
 		}
 		//player.physic(elapsed.asSeconds());
 		Sleep(10);
@@ -51,9 +55,11 @@ void Game::AnimationLoop()
 
 void Game::Run()
 {
+	
 	int posX = 0;
 	while (Engine::state == Engine::State::GAME)
 	{
+		LOG(0, "Predkosc: ", player.getVelocity().x);
 		//Vector2f mouse(Mouse::getPosition(*window));
 		sf::Event event;
 
@@ -73,9 +79,11 @@ void Game::Run()
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 		{
 			if (player.onGround) {
-				player.onGround = false;
 				player.animation = Player::JUMP;
-				player.setVelocity(sf::Vector2f(0,-60));
+				player.lock.lock();
+				player.onGround = false;
+				player.setVelocity(sf::Vector2f(player.getVelocity().x,-800));
+				player.lock.unlock();
 			}
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A))
@@ -84,13 +92,9 @@ void Game::Run()
 			if (player.sprite.getPosition().x > 0) {
 				if (player.onGround&&player.canAnimate())
 				player.animation = Player::MOVE;
-				/*if (player.velocity.x > -200)
-				player.velocity.x -= 50;*/
-				if (posX > 0)
-				{
-					posX -= 5;
-					//map->Reposition(1);
-				}
+				player.lock.lock();
+				player.addVelocity( sf::Vector2f(-50,0));
+				player.lock.unlock();
 			}
 			else {
 				player.sprite.setPosition(0, player.sprite.getPosition().y);
@@ -101,8 +105,9 @@ void Game::Run()
 		{
 			player.Face(Player::Direction::RIGHT);
 			if (player.sprite.getPosition().x < 1300) {
-				/*if (player.velocity.x < 200)
-				player.velocity.x += 50;*/
+				player.lock.lock();
+				player.addVelocity(sf::Vector2f(50, 0));
+				player.lock.unlock();
 				if (player.onGround&&player.canAnimate())
 				player.animation = Player::MOVE;
 			}

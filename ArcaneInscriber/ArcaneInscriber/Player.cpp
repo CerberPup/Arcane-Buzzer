@@ -67,13 +67,13 @@ void Player::Update()
 	sprite.setTextureRect(tmp);
 }
 
-Player::Player():Physics(1,1,sf::Vector2f(263,800),sf::Vector2f(0,0))
+Player::Player():Physics(10,sf::Vector2f(263,1000),sf::Vector2f(0,0),300)
 {
 	onGround = true;
-	animation = 0;
+	animation = Player::Animation::IDDLE;
 	sprite.setTexture(*Engine::getTexture("playerModels"));
 	sprite.setTextureRect(sf::IntRect(0, 32, 32, 32));
-	sprite.move(263, 800);
+	sprite.move(263, 1000);
 	sprite.setOrigin(16, 0);
 	sprite.setScale(2, 2);
 	lastDir = Direction::RIGHT;

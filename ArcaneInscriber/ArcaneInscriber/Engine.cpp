@@ -42,32 +42,34 @@ void Engine::setTexture(std::string Path, std::string Name)
 	
 	
 }
-#define Gravity 9810
+#define Gravity 2400
 void Engine::Physic(Physics* obj,float& elapsed)
 {
 	if (Entity* ent = dynamic_cast<Entity*>(obj))
 	{
 		sf::Vector2f position = obj->getPosition();
 		sf::Vector2f velocity = obj->getVelocity();
-		if (!obj->onGround)
+		if (!obj->onGround) {
 			velocity.y /= elapsed;//m/s^2
 			velocity.y += Gravity;
 			velocity.y *= elapsed;
-		float halfScreenY = 19 * 32;
-		/*if (position.y > halfScreenY) {
-			//sprite.setPosition(position.x, halfScreenY - 1);
-			obj->onGround = true;
-			velocity.y = 0;
 		}
+		float halfScreenY = 1000;
 		if (velocity.x > 1 || velocity.x < -1) {
-			velocity.x += 8 * (velocity.x > 0 ? -1 : 1);
+			velocity.x += obj->getFriction() * (velocity.x > 0 ? -1 : 1);
 		}
 		else {
 			velocity.x = 0;
-		}*/
+		}
 		sf::Vector2f distance(velocity);
 		distance.x *= elapsed;
 		distance.y *= elapsed;
+		if (position.y + distance.y > halfScreenY) {
+			//sprite.setPosition(position.x, halfScreenY - 1);
+			obj->onGround = true;
+			velocity.y = -0;
+		}
+		obj->setVelocity(velocity);
 		obj->move(distance);
 		ent->sprite.setPosition(obj->getPosition());
 	}
