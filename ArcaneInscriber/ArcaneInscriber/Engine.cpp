@@ -56,7 +56,12 @@ void Engine::Physic(Physics* obj,float& elapsed)
 		}
 		float halfScreenY = 1000;
 		if (velocity.x > 1 || velocity.x < -1) {
+			bool signBefore = std::signbit(velocity.x);
+			velocity.x /= elapsed;
 			velocity.x += obj->getFriction() * (velocity.x > 0 ? -1 : 1);
+			velocity.x *= elapsed;
+			if (signBefore != std::signbit(velocity.x))
+				velocity.x = 0;
 		}
 		else {
 			velocity.x = 0;
@@ -67,7 +72,8 @@ void Engine::Physic(Physics* obj,float& elapsed)
 		if (position.y + distance.y > halfScreenY) {
 			//sprite.setPosition(position.x, halfScreenY - 1);
 			obj->onGround = true;
-			velocity.y = -0;
+			velocity.y = 0;
+			distance.y = halfScreenY - position.y;
 		}
 		obj->setVelocity(velocity);
 		obj->move(distance);

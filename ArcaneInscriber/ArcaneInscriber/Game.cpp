@@ -36,7 +36,6 @@ void Game::PhysicsLoop()
 			Engine::Physic(var, elapsed);
 			var->lock.unlock();
 		}
-		//player.physic(elapsed.asSeconds());
 		Sleep(10);
 	}
 }
