@@ -10,8 +10,8 @@ Game::Game()
 	clockphysic.restart();
 	animationList.push_back(&player);
 	physicsList.push_back(&player);
-	colisionList.push_back(dynamic_cast<Physics*>(new Tile(sf::Vector2f(150, 1000), sf::Vector2f(32, 32))));
-	colisionList.push_back(dynamic_cast<Physics*>(new Tile(sf::Vector2f(150+128, 1000-128), sf::Vector2f(32, 32))));
+	colisionList.push_back(new Tile(sf::Vector2f(150, 1000), sf::Vector2f(32, 32)));
+	colisionList.push_back(new Tile(sf::Vector2f(150+128, 1000-128), sf::Vector2f(32, 32)));
 	doPhysics = true;
 	doAnimate = true;
 	physicLoop = new std::thread((&Game::PhysicsLoop), this);

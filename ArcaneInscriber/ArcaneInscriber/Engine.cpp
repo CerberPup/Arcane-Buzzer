@@ -73,7 +73,7 @@ void Engine::Physic(Physics* obj,float& elapsed,const std::list<Physics*>& colli
 	}
 
 	obj->setVelocity(velocity);
-	sf::Vector2f max(1000, 1000);
+	sf::Vector2f max(50, 50);
 	sf::Vector2f dif;
 	for (auto it = collision.begin(); it != collision.end(); it++)
 	{
@@ -102,7 +102,7 @@ sf::Vector2f Engine::dist(Physics* obj1, Physics* obj2)
 	if (!((obj1rect.left + obj1rect.width)<obj2rect.left || obj1rect.left>obj2rect.left + obj2rect.width)) {
 		if (velocity.y > 0) {
 			if (obj1rect.top < obj2rect.top) {//obj1 powy¿ej obj2
-				dist.y = obj2rect.top - obj1rect.top - obj1rect.height-1;
+				dist.y = obj2rect.top - obj1rect.top - obj1rect.height-0.5f;
 				if (dist.y <= 0)
 				{
 					obj1->onGround = true;
@@ -113,7 +113,7 @@ sf::Vector2f Engine::dist(Physics* obj1, Physics* obj2)
 		}
 		else {
 			if (obj1rect.top > obj2rect.top) {//obj1 poni¿ej obj2
-				dist.y = obj2rect.top + obj2rect.height - obj1rect.top+1;
+				dist.y = obj2rect.top + obj2rect.height - obj1rect.top+0.5f;
 				if (dist.y >= 0)
 				{
 					dist.y = 0;
@@ -125,7 +125,7 @@ sf::Vector2f Engine::dist(Physics* obj1, Physics* obj2)
 	if (!((obj1rect.top + obj1rect.height) < obj2rect.top || obj1rect.top > obj2rect.top + obj2rect.height)) {
 		if (velocity.x > 0) {
 			if (obj1rect.left < obj2rect.left) {//obj1 po lewej obj2
-				dist.x = obj2rect.left - obj1rect.left - obj1rect.width-1;
+				dist.x = obj2rect.left - obj1rect.left - obj1rect.width-0.5f;
 				if (dist.x <= 0)
 				{
 					dist.x = 0;
@@ -135,7 +135,7 @@ sf::Vector2f Engine::dist(Physics* obj1, Physics* obj2)
 		}
 		else {
 			if (obj1rect.left > obj2rect.left) {//obj1 po prawej obj2
-				dist.x = obj2rect.left + obj2rect.width - obj1rect.left+1;
+				dist.x = obj2rect.left + obj2rect.width - obj1rect.left+0.5f;
 				if (dist.x >= 0)
 				{
 					dist.x = 0;
