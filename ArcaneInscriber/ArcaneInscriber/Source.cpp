@@ -16,7 +16,7 @@ void splash(Engine &e) {
 		MessageBox(NULL, TEXT("Font not found!"), TEXT("ERROR"), NULL);
 		return;
 	}
-	sf::Text title("Tytul", font, 80);
+	sf::Text title("Naked Archer King", font, 80);
 	title.setStyle(sf::Text::Bold);
 	title.setPosition(e.width / 2 - title.getGlobalBounds().width / 2, e.height / 4);
 	sf::Color c(255,255,255, 0);

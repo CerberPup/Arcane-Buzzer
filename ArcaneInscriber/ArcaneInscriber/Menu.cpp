@@ -25,7 +25,7 @@ Menu::~Menu()
 
 void Menu::Run()
 {
-	Text title("Tytul", font, 80);
+	Text title("Naked Archer King", font, 80);
 	title.setStyle(Text::Bold);
 	title.setPosition(size.x / 2 - title.getGlobalBounds().width / 2, size.y / 4);
 	title.setFillColor(Color(255,255,255,140));

@@ -1,19 +1,22 @@
 #include "Game.h"
 #include <vector>
 #include <mutex>
+#include <memory>
+#include "Tile.h"
 #include "Logger.h"
-
+#pragma warning( disable : 4244) // Ostrzezenie o konwersji unsigned -> float
 Game::Game()
 {
 	clockphysic.restart();
 	animationList.push_back(&player);
 	physicsList.push_back(&player);
+	colisionList.push_back(dynamic_cast<Physics*>(new Tile(sf::Vector2f(150, 1000), sf::Vector2f(32, 32))));
+	colisionList.push_back(dynamic_cast<Physics*>(new Tile(sf::Vector2f(150+128, 1000-128), sf::Vector2f(32, 32))));
 	doPhysics = true;
 	doAnimate = true;
 	physicLoop = new std::thread((&Game::PhysicsLoop), this);
 	animationLoop = new std::thread((&Game::AnimationLoop), this);
 }
-
 
 Game::~Game()
 {
@@ -25,6 +28,9 @@ Game::~Game()
 	delete physicLoop;
 }
 
+//#define NOCLIP
+#define COLBOX
+
 void Game::PhysicsLoop()
 {
 	while (doPhysics) {
@@ -33,7 +39,11 @@ void Game::PhysicsLoop()
 		for (Physics* var : physicsList)
 		{
 			var->lock.lock();
-			Engine::Physic(var, elapsed);
+#ifndef NOCLIP
+			Engine::Physic(var, elapsed, colisionList);
+#else
+			Engine::PhysicNoClip(var, elapsed,colisionList);
+#endif // !NOCLIP
 			var->lock.unlock();
 		}
 		Sleep(10);
@@ -48,7 +58,6 @@ void Game::AnimationLoop()
 			var->Update();
 		}
 		Sleep(100);
-		//cout << "anim" << endl;
 	}
 }
 
@@ -58,7 +67,6 @@ void Game::Run()
 	int posX = 0;
 	while (Engine::state == Engine::State::GAME)
 	{
-		LOG(0, "Predkosc: ", player.getVelocity().x);
 		//Vector2f mouse(Mouse::getPosition(*window));
 		sf::Event event;
 
@@ -72,11 +80,20 @@ void Game::Run()
 			}
 
 		}
+#ifdef NOCLIP
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
+			player.setVelocity(sf::Vector2f(0, 0));
+		}
+#endif
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+#ifdef NOCLIP
+			player.addVelocity(sf::Vector2f(0, +10));
+#endif
 			player.onGround = true;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 		{
+#ifndef NOCLIP
 			if (player.onGround) {
 				player.animation = Player::JUMP;
 				player.lock.lock();
@@ -84,28 +101,37 @@ void Game::Run()
 				player.setVelocity(sf::Vector2f(player.getVelocity().x,-800));
 				player.lock.unlock();
 			}
+#else
+				player.animation = Player::JUMP;
+				player.lock.lock();
+				player.addVelocity(sf::Vector2f(0, -10));
+				player.lock.unlock();
+#endif
+				
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
 			player.Face(Player::Direction::LEFT);
-			if (player.sprite.getPosition().x > 0) {
-				if (player.onGround&&player.canAnimate())
+			if (player.onGround&&player.canAnimate())
 				player.animation = Player::MOVE;
-				player.lock.lock();
-				player.addVelocity( sf::Vector2f(-50,0));
-				player.lock.unlock();
-			}
-			else {
-				player.sprite.setPosition(0, player.sprite.getPosition().y);
-			}
-			//Player goes Left/Player stops/Player slows down
+			player.lock.lock();
+#ifndef NOCLIP
+			player.addVelocity( sf::Vector2f(-50,0));
+#else
+			player.addVelocity(sf::Vector2f(-10, 0));
+#endif
+			player.lock.unlock();
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
 			player.Face(Player::Direction::RIGHT);
 			if (player.sprite.getPosition().x < 1300) {
 				player.lock.lock();
+#ifndef NOCLIP
 				player.addVelocity(sf::Vector2f(50, 0));
+#else
+				player.addVelocity(sf::Vector2f(+10, 0));
+#endif
 				player.lock.unlock();
 				if (player.onGround&&player.canAnimate())
 				player.animation = Player::MOVE;
@@ -113,37 +139,40 @@ void Game::Run()
 			else {
 				player.sprite.setPosition(1300, player.sprite.getPosition().y);
 			}
-			/*if (posX < 5000)
-			{
-				posX += 5;
-				map->Reposition(-1);
-			}*/
 		}
-		//spriteBack.setTextureRect(IntRect(posX, 0, 1920, 1080));
-		/*if (player.sprite.getPosition().x > 520) {
-		Sleep(100);
-		GiveScript();
-		if (Pyth("py", "multiply", "5", "4") == Pyth("script", "multiply", "5", "4")) {
-		MessageBox(NULL, TEXT("Rozwi¹za³eœ poprawnie zadanie."), TEXT("Gratulacje"), NULL);
-		}
-		else {
-		MessageBox(NULL, TEXT("Tym razem nie uda³o Ci siê rozwi¹zaæ zadania. Próbuj dalej."), TEXT("Ups..."), NULL);
-		}
-		*state = Engine::EXIT;
-
-		}*/
-		//cout << player.sprite.getPosition().x<<endl;
-
-		//Player rotates 15
 
 		Engine::window.clear(sf::Color(30,30,30));
-
-		//Engine::window.draw(spriteBack);
-
-		//map->Display(posX / 32);
-
+#ifdef GRID
+		DrawGrid();
+#endif // GRID
 		Engine::window.draw(player);
-		//window->draw(wonsz);
+#ifdef COLBOX
+		sf::Vector2i coord = player.getCoord();
+		//LOG(0, "Pozycja", coord.x, coord.y,"Fizycznie :",player.getPos().x,player.getPos().y);
+		for (Physics* var : physicsList)
+		{
+			var->drawColisionBox();
+		}
+		(*colisionList.begin())->drawColisionBox();
+		(*++colisionList.begin())->drawColisionBox();
+#endif
 		Engine::window.display();
 	}
 }
+#ifdef GRID
+void Game::DrawGrid() {
+	if (grid.size() == 0) {
+		sf::Vector2u size = Engine::window.getSize();
+		for (unsigned int i = 0; i < size.x; i += 32) {
+			grid.push_back(sf::Vertex(sf::Vector2f(size.x - i, 0),sf::Color(0,255,0,0)));
+			grid.push_back(sf::Vertex(sf::Vector2f(size.x - i, size.y), sf::Color(255, 0, 0)));
+		}
+		for (unsigned int i = 0; i < size.y; i += 32) {
+			grid.push_back(sf::Vertex(sf::Vector2f(0, size.y - i), sf::Color(0, 0, 255,0)));
+			grid.push_back(sf::Vertex(sf::Vector2f(size.x, size.y- i), sf::Color(255, 0, 0)));
+		}
+	}
+	Engine::window.draw(&grid[0],grid.size(),sf::Lines);
+
+}
+#endif // GRID
