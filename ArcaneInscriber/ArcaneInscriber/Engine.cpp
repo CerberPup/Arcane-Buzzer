@@ -171,7 +171,8 @@ void Engine::PhysicNoClip(Physics* obj, float& elapsed, const std::list<Physics*
 
 Engine::Engine(int w, int h) :width(w), height(h)
 {
-	window.create(sf::VideoMode(w, h), "Naked Archer King",sf::Style::Fullscreen);
+	//window.create(sf::VideoMode(w, h), "Naked Archer King", sf::Style::Fullscreen);
+	window.create(sf::VideoMode(w/2, h/2), "Naked Archer King");
 	window.setFramerateLimit(60);
 }
 

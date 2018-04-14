@@ -14,6 +14,7 @@
 class Game
 {
 private:
+	sf::View view;
 	bool doAnimate, doPhysics;
 	std::list<Animable*> animationList;
 	std::list<Physics*> physicsList;

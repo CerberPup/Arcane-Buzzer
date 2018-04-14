@@ -16,16 +16,21 @@ Game::Game()
 	doAnimate = true;
 	physicLoop = new std::thread((&Game::PhysicsLoop), this);
 	animationLoop = new std::thread((&Game::AnimationLoop), this);
+	view = sf::View(player.getPos() , sf::Vector2f(Engine::window.getSize()));
+	Engine::window.setView(view);
 }
 
 Game::~Game()
 {
+	Engine::window.setMouseCursorVisible(true);
 	doAnimate = false;
 	doPhysics = false;
 	animationLoop->join();
 	physicLoop->join();
 	delete animationLoop;
 	delete physicLoop;
+	while (!colisionList.empty()) delete colisionList.front(), colisionList.pop_front();
+	Engine::window.setView(Engine::window.getDefaultView());
 }
 
 //#define NOCLIP
@@ -34,6 +39,8 @@ Game::~Game()
 void Game::PhysicsLoop()
 {
 	while (doPhysics) {
+		view.setCenter(player.getPos());
+		Engine::window.setView(view);
 		float elapsed = clockphysic.getElapsedTime().asSeconds();
 		clockphysic.restart();
 		for (Physics* var : physicsList)
@@ -63,15 +70,32 @@ void Game::AnimationLoop()
 
 void Game::Run()
 {
-	
-	int posX = 0;
 	while (Engine::state == Engine::State::GAME)
 	{
+		Engine::window.setMouseCursorGrabbed(false);
+		Engine::window.setMouseCursorVisible(false);
 		//Vector2f mouse(Mouse::getPosition(*window));
 		sf::Event event;
-
+		bool focus = true;
 		while (Engine::window.pollEvent(event))
 		{
+			if (event.type == sf::Event::LostFocus) {
+				bool focus = false;
+				while (Engine::window.pollEvent(event) || !focus)
+				{
+					if (event.type == sf::Event::GainedFocus) {
+						focus = true;
+					}
+					Sleep(20);
+				}
+			}
+			if (event.type == sf::Event::Resized)
+			{
+				// update the view to the new size of the window
+				view.setSize(event.size.width, event.size.height);
+				Engine::window.setView(view);
+			}
+
 			if (event.type == sf::Event::Closed
 				|| event.type == sf::Event::KeyPressed
 				&& event.key.code == sf::Keyboard::Escape) {
@@ -80,6 +104,15 @@ void Game::Run()
 			}
 
 		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add)) {
+			view.zoom(0.99);
+			Engine::window.setView(view);
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Subtract)) {
+			view.zoom(1.01);
+			Engine::window.setView(view);
+		}
+
 #ifdef NOCLIP
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
 			player.setVelocity(sf::Vector2f(0, 0));
@@ -142,6 +175,15 @@ void Game::Run()
 		}
 
 		Engine::window.clear(sf::Color(30,30,30));
+		sf::Vertex outline[] =
+		{
+			sf::Vertex(sf::Vector2f(0,0),sf::Color(255,0,0)),
+			sf::Vertex(sf::Vector2f(1920,0),sf::Color(0,255,0)),
+			sf::Vertex(sf::Vector2f(1920,1080),sf::Color(0,0,255)),
+			sf::Vertex(sf::Vector2f(0,1080),sf::Color(0,0,0))
+
+		};
+		Engine::window.draw(outline, 4, sf::TrianglesFan);
 #ifdef GRID
 		DrawGrid();
 #endif // GRID
@@ -162,7 +204,7 @@ void Game::Run()
 #ifdef GRID
 void Game::DrawGrid() {
 	if (grid.size() == 0) {
-		sf::Vector2u size = Engine::window.getSize();
+		sf::Vector2u size(1920,1080);
 		for (unsigned int i = 0; i < size.x; i += 32) {
 			grid.push_back(sf::Vertex(sf::Vector2f(size.x - i, 0),sf::Color(0,255,0,0)));
 			grid.push_back(sf::Vertex(sf::Vector2f(size.x - i, size.y), sf::Color(255, 0, 0)));
