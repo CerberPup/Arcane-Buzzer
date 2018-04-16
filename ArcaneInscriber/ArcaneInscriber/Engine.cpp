@@ -1,5 +1,5 @@
 #include "Engine.h"
-
+#include <Windows.h>
 
 std::shared_ptr<sf::Texture > Engine::getTexture(std::string Name)
 {
@@ -169,13 +169,52 @@ void Engine::PhysicNoClip(Physics* obj, float& elapsed, const std::list<Physics*
 	obj->move(abs(distance.x)<abs(max.x)? distance.x: max.x, abs(distance.y)<abs(max.y) ? distance.y : max.y);
 }
 
-Engine::Engine(int w, int h) :width(w), height(h)
+Engine::Engine(int w, int h) :width(w/2), height(h/2)
 {
 	//window.create(sf::VideoMode(w, h), "Naked Archer King", sf::Style::Fullscreen);
 	window.create(sf::VideoMode(w/2, h/2), "Naked Archer King");
 	window.setFramerateLimit(60);
 }
 
+void Engine::toggleFullScreen(bool full)
+{
+	sf::View view = window.getView();
+	if (full) {
+		sf::VideoMode size = sf::VideoMode::getDesktopMode();
+		window.close();
+		window.create(sf::VideoMode(size.width, size.height), "Naked Archer King", sf::Style::Fullscreen);
+	}
+	else {
+
+		sf::VideoMode size = sf::VideoMode::getDesktopMode();
+		window.close();
+		window.create(sf::VideoMode(size.width / 2, size.height / 2), "Naked Archer King");
+	}
+	window.setView(view);
+}
+
+//Do borderless
+void Engine::setStyle(sf::Uint32 style)
+{
+	HWND handle = Engine::window.getSystemHandle();
+	DWORD win32Style = WS_VISIBLE;
+
+	if (style == sf::Style::None)
+	{
+		win32Style |= WS_POPUP;
+	}
+	else
+	{
+		if (style & sf::Style::Titlebar) win32Style |= WS_CAPTION | WS_MINIMIZEBOX;
+		if (style & sf::Style::Resize)   win32Style |= WS_THICKFRAME | WS_MAXIMIZEBOX;
+		if (style & sf::Style::Close)    win32Style |= WS_SYSMENU;
+	}
+
+	SetWindowLongPtr(handle, GWL_STYLE, win32Style);
+
+	// Force changes to take effect
+	SetWindowPos(handle, NULL, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_DRAWFRAME);
+}
 
 Engine::~Engine()
 {

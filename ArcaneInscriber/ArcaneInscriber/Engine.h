@@ -30,5 +30,7 @@ public:
 	//Path,Name
 	static sf::RenderWindow window;
 	Engine(int w, int h);
+	static void toggleFullScreen(bool full);
+	static void setStyle(sf::Uint32 style);
 	~Engine();
 };

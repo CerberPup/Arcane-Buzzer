@@ -9,6 +9,7 @@
 class Menu
 {
 private:
+	sf::View view;
 	sf::Font font;
 	sf::Vector2u size;
 public:

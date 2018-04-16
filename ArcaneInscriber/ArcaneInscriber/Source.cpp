@@ -16,9 +16,12 @@ void splash(Engine &e) {
 		MessageBox(NULL, TEXT("Font not found!"), TEXT("ERROR"), NULL);
 		return;
 	}
-	sf::Text title("Naked Archer King", font, 80);
+	sf::Vector2u size = e.window.getSize();
+	sf::View view(sf::Vector2f(0, 0), sf::Vector2f(size.x, size.y));
+	e.window.setView(view);
+	sf::Text title("Naked Archer King", font, 40);
 	title.setStyle(sf::Text::Bold);
-	title.setPosition(e.width / 2 - title.getGlobalBounds().width / 2, e.height / 4);
+	title.setPosition(- title.getGlobalBounds().width / 2, -160);
 	sf::Color c(255,255,255, 0);
 	title.setFillColor(c);
 	for (int i = 0; i < 46; i++)
