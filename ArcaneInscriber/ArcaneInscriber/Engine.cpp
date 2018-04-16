@@ -190,6 +190,7 @@ void Engine::toggleFullScreen(bool full)
 		window.close();
 		window.create(sf::VideoMode(size.width / 2, size.height / 2), "Naked Archer King");
 	}
+	window.setFramerateLimit(60);
 	window.setView(view);
 }
 
