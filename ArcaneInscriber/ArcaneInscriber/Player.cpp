@@ -67,7 +67,7 @@ void Player::Update()
 	sprite.setTextureRect(tmp);
 }
 
-Player::Player():Physics(1200,sf::Vector2f(16+32*4,1080-32*5),300,sf::Vector2f(0,0),sf::Vector2f(32,44), sf::Vector2f(-16, 20))
+Player::Player():Physics(1600,sf::Vector2f(16+32*4,1080-32*5),300,sf::Vector2f(0,0),sf::Vector2f(32,44), sf::Vector2f(-16, 20))
 {
 	onGround = true;
 	animation = Player::Animation::IDDLE;

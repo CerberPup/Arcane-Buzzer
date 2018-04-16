@@ -10,8 +10,8 @@ Game::Game()
 	clockphysic.restart();
 	animationList.push_back(&player);
 	physicsList.push_back(&player);
-	colisionList.push_back(new Tile(sf::Vector2f(150, 1000), sf::Vector2f(32, 32)));
-	colisionList.push_back(new Tile(sf::Vector2f(150+128, 1000-128), sf::Vector2f(32, 32)));
+	colisionList.push_back(new Tile(sf::Vector2f(160, 1080-32), sf::Vector2f(32, 32)));
+	colisionList.push_back(new Tile(sf::Vector2f(160+128, 1080-128), sf::Vector2f(32, 32)));
 	doPhysics = true;
 	doAnimate = true;
 	physicLoop = new std::thread((&Game::PhysicsLoop), this);
@@ -158,20 +158,15 @@ void Game::Run()
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
 			player.Face(Player::Direction::RIGHT);
-			if (player.sprite.getPosition().x < 1300) {
-				player.lock.lock();
+			player.lock.lock();
 #ifndef NOCLIP
-				player.addVelocity(sf::Vector2f(50, 0));
+			player.addVelocity(sf::Vector2f(50, 0));
 #else
-				player.addVelocity(sf::Vector2f(+10, 0));
+			player.addVelocity(sf::Vector2f(+10, 0));
 #endif
-				player.lock.unlock();
-				if (player.onGround&&player.canAnimate())
-				player.animation = Player::MOVE;
-			}
-			else {
-				player.sprite.setPosition(1300, player.sprite.getPosition().y);
-			}
+			player.lock.unlock();
+			if (player.onGround&&player.canAnimate())
+			player.animation = Player::MOVE;
 		}
 
 		Engine::window.clear(sf::Color(30,30,30));

@@ -50,7 +50,7 @@ void Engine::Physic(Physics* obj,float& elapsed,const std::list<Physics*>& colli
 	velocity.y += Gravity;
 	velocity.y *= elapsed;
 
-	float halfScreenY = 1000;
+	float halfScreenY = 1080-64;
 	if (velocity.x > 1 || velocity.x < -1) {
 		bool signBefore = std::signbit(velocity.x);
 		velocity.x /= elapsed;
