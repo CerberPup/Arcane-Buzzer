@@ -39,6 +39,7 @@ void initResources() {
 	try {
 		Engine::setTexture("Resources/City.png", "City");
 		Engine::setTexture("Resources/characters.png", "playerModels");
+		Engine::setTexture("Resources/Tiles.png", "tiles");
 	}
 	catch (exception ex) {
 		cout << ex.what() << endl;

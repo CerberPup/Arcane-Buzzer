@@ -11,9 +11,10 @@ Tile::Tile(sf::Vector2f _pos, sf::Vector2f _size, std::string _texture, sf::IntR
 {
 	if (_texture != "") {
 		sprite.setTexture(*Engine::getTexture(_texture));
-		sprite.setTextureRect(_textureRect);/*
-		sprite.setOrigin(_spriteOrigin.x, _spriteOrigin.y);
-		sprite.setScale(_spriteScale.x, _spriteScale.y);*/
+		sprite.setTextureRect(_textureRect);
+		//sprite.setOrigin(_pos.x, _pos.y);
+		sprite.setPosition(_pos.x, _pos.y);
+		sprite.setScale(2, 2);
 	}
 }
 

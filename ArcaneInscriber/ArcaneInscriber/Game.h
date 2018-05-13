@@ -4,6 +4,7 @@
 #include "Logger.h"
 #include "Player.h"
 #include "Tile.h"
+#include "Map.h"
 #include <SFML\Graphics.hpp>
 #include <thread>
 #include <Windows.h>
@@ -14,6 +15,7 @@
 class Game
 {
 private:
+	Map map;
 	sf::View view;
 	bool doAnimate, doPhysics;
 	std::list<Animable*> animationList;

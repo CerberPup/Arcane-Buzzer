@@ -4,6 +4,7 @@
 #include <memory>
 #include "Tile.h"
 #include "Logger.h"
+#include <iostream>
 #pragma warning( disable : 4244) // Ostrzezenie o konwersji unsigned -> float
 Game::Game()
 {
@@ -12,6 +13,10 @@ Game::Game()
 	physicsList.push_back(&player);
 	colisionList.push_back(new Tile(sf::Vector2f(160, 1080-32), sf::Vector2f(32, 32)));
 	colisionList.push_back(new Tile(sf::Vector2f(160+128, 1080-128), sf::Vector2f(32, 32)));
+	/*for (Tile* tile : map.mapTiles)
+	{
+		colisionList.push_back(tile);
+	}*/
 	doPhysics = true;
 	doAnimate = true;
 	physicLoop = new std::thread((&Game::PhysicsLoop), this);
@@ -123,6 +128,7 @@ void Game::Run()
 			player.addVelocity(sf::Vector2f(0, +10));
 #endif
 			player.onGround = true;
+			std::cout << "\n" << Game::view.getCenter().x << ", " << Game::view.getCenter().y << "\t" << Game::view.getSize().x << ", " << Game::view.getSize().y;;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 		{
@@ -182,6 +188,7 @@ void Game::Run()
 #ifdef GRID
 		DrawGrid();
 #endif // GRID
+		map.Display(view.getCenter(), view.getSize(), Engine::window);
 		Engine::window.draw(player);
 #ifdef COLBOX
 		sf::Vector2i coord = player.getCoord();
@@ -190,8 +197,12 @@ void Game::Run()
 		{
 			var->drawColisionBox();
 		}
-		(*colisionList.begin())->drawColisionBox();
-		(*++colisionList.begin())->drawColisionBox();
+		for (auto obj : colisionList)
+		{
+			obj->drawColisionBox();
+		}
+		/*(*colisionList.begin())->drawColisionBox();
+		(*++colisionList.begin())->drawColisionBox();*/
 #endif
 		Engine::window.display();
 	}
