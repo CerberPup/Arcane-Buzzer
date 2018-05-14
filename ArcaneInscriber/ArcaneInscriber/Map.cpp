@@ -65,7 +65,7 @@ void Map::Display(sf::Vector2f viewCenter, sf::Vector2f viewSize)
 {
 	for (Tile* tile : mapTiles)
 	{
-		if ((tile->getPos().x > (viewCenter.x - viewSize.x / 2)) && (tile->getPos().x < (viewCenter.x + viewSize.x / 2)))
+		if ((tile->getPos().x + tile->getRect().width > (viewCenter.x - viewSize.x / 2)) && (tile->getPos().x < (viewCenter.x + viewSize.x / 2)))
 		{
 			if ((tile->getPos().y > (viewCenter.y - viewSize.y / 2)) && (tile->getPos().y < (viewCenter.y + viewSize.y / 2)))
 			{

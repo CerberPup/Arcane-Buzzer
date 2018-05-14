@@ -6,6 +6,7 @@ class Physics
 {
 private:
 	float friction;
+	bool shouldColide;
 	sf::Vector2f position;
 	sf::Vector2f size;
 	sf::Vector2f offset;
@@ -25,6 +26,7 @@ public:
 	bool onGround;
 	Physics(float _friction, sf::Vector2f _position,  float _maxXVelocity, sf::Vector2f _velocity,sf::Vector2f _size = sf::Vector2f(0,0), sf::Vector2f _offset = sf::Vector2f(0,0));
 	Physics(sf::Vector2f _position, sf::Vector2f _size, sf::Vector2f _offset = sf::Vector2f(0, 0));
+	Physics(sf::Vector2f _position, sf::Vector2f _size, bool _shouldColide = true, sf::Vector2f _offset = sf::Vector2f(0, 0));
 	sf::FloatRect getRect();
 	sf::Vector2i getCoord();
 	float getFriction();
@@ -36,6 +38,7 @@ public:
 	void setVelocityX(float x);
 	void setVelocityY(float y);
 	void addVelocity(sf::Vector2f _velocity);
+	bool getColisionPossibility();
 	float getMaxXVelocity();
 	void move(sf::Vector2f _position);
 	void move(float X, float Y);

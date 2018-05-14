@@ -27,6 +27,17 @@ void Player::Face(Direction d)
 
 void Player::Update()
 {
+	if (tookDamage) {
+		damageCooldown--;
+		if (damageCooldown > 0) {
+			sprite.setColor(sf::Color(200 -  10* (6 - damageCooldown), 30, 30, 255));
+		}
+		else {
+			sprite.setColor(sf::Color(255, 255, 255, 255));
+			tookDamage = false;
+		}
+	}
+
 	sf::IntRect tmp = sprite.getTextureRect();
 	switch (animation)
 	{
@@ -67,7 +78,7 @@ void Player::Update()
 	sprite.setTextureRect(tmp);
 }
 
-Player::Player():Physics(1600,sf::Vector2f(16+32*4,1080-32*5),300,sf::Vector2f(0,0),sf::Vector2f(32,44), sf::Vector2f(-16, 20))
+Player::Player():Physics(1600,sf::Vector2f(16+32*4,1080-32*5),300,sf::Vector2f(0,0),sf::Vector2f(32,44), sf::Vector2f(-16, 20)),HasLife(3,6)
 {
 	onGround = true;
 	animation = Player::Animation::IDDLE;

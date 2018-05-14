@@ -4,8 +4,9 @@
 #include "Physics.h"
 #include "Animable.h"
 #include "Entity.h"
+#include "HasLife.h"
 
-class Player :public sf::Transformable , public sf::Drawable, public Animable,public Physics,public Entity
+class Player :public sf::Transformable, public sf::Drawable, public Animable, public Physics, public Entity, public HasLife
 {
 public:
 	enum Animation {

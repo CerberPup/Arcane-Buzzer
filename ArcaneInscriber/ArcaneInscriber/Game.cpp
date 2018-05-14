@@ -13,10 +13,11 @@ Game::Game()
 	physicsList.push_back(&player);
 	colisionList.push_back(new Tile(sf::Vector2f(160, 1080-32), sf::Vector2f(32, 32)));
 	colisionList.push_back(new Tile(sf::Vector2f(160+128, 1080-128), sf::Vector2f(32, 32)));
-	/*for (Tile* tile : map.mapTiles)
+	for (Tile* tile : map.mapTiles)
 	{
-		colisionList.push_back(tile);
-	}*/
+		if(tile->getColisionPossibility())
+			colisionList.push_back(tile);
+	}
 	doPhysics = true;
 	doAnimate = true;
 	physicLoop = new std::thread((&Game::PhysicsLoop), this);
@@ -109,6 +110,12 @@ void Game::Run()
 			}
 
 		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::K)) {
+			player.TakeDamage();
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+			player.rotate(10);
+		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add)) {
 			view.zoom(0.99);
 			Engine::window.setView(view);
@@ -176,23 +183,13 @@ void Game::Run()
 		}
 
 		Engine::window.clear(sf::Color(30,30,30));
-		sf::Vertex outline[] =
-		{
-			sf::Vertex(sf::Vector2f(0,0),sf::Color(255,0,0)),
-			sf::Vertex(sf::Vector2f(1920,0),sf::Color(0,255,0)),
-			sf::Vertex(sf::Vector2f(1920,1080),sf::Color(0,0,255)),
-			sf::Vertex(sf::Vector2f(0,1080),sf::Color(0,0,0))
-
-		};
-		Engine::window.draw(outline, 4, sf::TrianglesFan);
 #ifdef GRID
 		DrawGrid();
 #endif // GRID
 		map.Display(view.getCenter(), view.getSize());
 		Engine::window.draw(player);
 #ifdef COLBOX
-		sf::Vector2i coord = player.getCoord();
-		//LOG(0, "Pozycja", coord.x, coord.y,"Fizycznie :",player.getPos().x,player.getPos().y);
+		LOG(0, "Predkosc", player.getVelocity().y);
 		for (Physics* var : physicsList)
 		{
 			var->drawColisionBox();
@@ -201,8 +198,6 @@ void Game::Run()
 		{
 			obj->drawColisionBox();
 		}
-		/*(*colisionList.begin())->drawColisionBox();
-		(*++colisionList.begin())->drawColisionBox();*/
 #endif
 		Engine::window.display();
 	}
@@ -212,12 +207,12 @@ void Game::DrawGrid() {
 	if (grid.size() == 0) {
 		sf::Vector2u size(1920,1080);
 		for (unsigned int i = 0; i < size.x; i += 32) {
-			grid.push_back(sf::Vertex(sf::Vector2f(size.x - i, 0),sf::Color(0,255,0,0)));
-			grid.push_back(sf::Vertex(sf::Vector2f(size.x - i, size.y), sf::Color(255, 0, 0)));
+			grid.push_back(sf::Vertex(sf::Vector2f(size.x - i, 0),sf::Color(0,128,0)));
+			grid.push_back(sf::Vertex(sf::Vector2f(size.x - i, size.y), sf::Color(128, 0, 0)));
 		}
 		for (unsigned int i = 0; i < size.y; i += 32) {
-			grid.push_back(sf::Vertex(sf::Vector2f(0, size.y - i), sf::Color(0, 0, 255,0)));
-			grid.push_back(sf::Vertex(sf::Vector2f(size.x, size.y- i), sf::Color(255, 0, 0)));
+			grid.push_back(sf::Vertex(sf::Vector2f(0, size.y - i), sf::Color(0, 128, 0)));
+			grid.push_back(sf::Vertex(sf::Vector2f(size.x, size.y- i), sf::Color(128, 0, 0)));
 		}
 	}
 	Engine::window.draw(&grid[0],grid.size(),sf::Lines);

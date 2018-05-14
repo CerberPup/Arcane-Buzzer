@@ -6,6 +6,13 @@ Physics::Physics(float _friction, sf::Vector2f _position, float _maxXVelocity, s
 {
 }
 
+Physics::Physics(sf::Vector2f _position, sf::Vector2f _size, bool _shouldColide, sf::Vector2f _offset) : position(_position), size(_size), offset(_offset),shouldColide(_shouldColide)
+{
+	friction = 0;
+	velocity = sf::Vector2f(0, 0);
+	maxXVelocity = 300;
+}
+
 Physics::Physics(sf::Vector2f _position, sf::Vector2f _size, sf::Vector2f _offset):position(_position),size(_size),offset(_offset)
 {
 	friction = 0;
@@ -76,6 +83,11 @@ void Physics::addVelocity(sf::Vector2f _velocity)
 			_velocity.x = max;
 	}
 	velocity += _velocity;
+}
+
+bool Physics::getColisionPossibility()
+{
+	return shouldColide;
 }
 
 float Physics::getMaxXVelocity()
