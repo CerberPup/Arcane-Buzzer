@@ -1,4 +1,6 @@
 #pragma once
+#ifndef Engine_H
+#define Engine_H
 
 #include <memory>
 #include <SFML\Graphics.hpp>
@@ -34,3 +36,5 @@ public:
 	static void setStyle(sf::Uint32 style);
 	~Engine();
 };
+
+#endif // Engine_H

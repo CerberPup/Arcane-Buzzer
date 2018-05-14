@@ -1,19 +1,17 @@
 #pragma once
+#include <SFML\Graphics.hpp>
 #include <string>
 #include <vector>
 #include <Windows.h>
 #include <fstream>
 #include "Tile.h"
-#include <SFML\Graphics.hpp>
+#include "Engine.h"
 
 class Map
 {
-private:
-	std::fstream mapFile;
-
 public:
 	std::vector<Tile*> mapTiles;
 	Map();
-	void Display(sf::Vector2f viewCenter, sf::Vector2f viewSize, sf::RenderWindow &win);
+	void Display(sf::Vector2f viewCenter, sf::Vector2f viewSize);
 	~Map();
 };

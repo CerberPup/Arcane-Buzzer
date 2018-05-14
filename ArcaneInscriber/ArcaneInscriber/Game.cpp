@@ -188,7 +188,7 @@ void Game::Run()
 #ifdef GRID
 		DrawGrid();
 #endif // GRID
-		map.Display(view.getCenter(), view.getSize(), Engine::window);
+		map.Display(view.getCenter(), view.getSize());
 		Engine::window.draw(player);
 #ifdef COLBOX
 		sf::Vector2i coord = player.getCoord();
