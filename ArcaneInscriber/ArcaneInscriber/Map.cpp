@@ -10,7 +10,7 @@ Map::Map()
 	int c = 0;
 	int j = 0;
 	if (mapFile.good()) {
-		for (int i = 0; i < 32; i++)
+		for (int i = 0; i < 33; i++)
 		{
 			j = 0;
 			do
@@ -24,35 +24,38 @@ Map::Map()
 					textureRect = { 128, 32, 16, 16 };
 				if (c == 13)
 					textureRect = { 144, 32, 16, 16 };
-				/*if (c == 'd')
-					textureRect = { 112, 48, 16, 16 };
-				if (c == 'e')
+				if (c == 14)
+					textureRect = { 176, 16, 16, 16 };
+				if (c == 15)
 					textureRect = { 128, 48, 16, 16 };
-				if (c == 'f')
+				if (c == 16)
 					textureRect = { 144, 48, 16, 16 };
-				if (c == 'g')
+				if (c == 17)
 					textureRect = { 160, 32, 16, 16 };
-				if (c == 'h')
+				if (c == 18)
 					textureRect = { 176, 32, 16, 16 };
-				if (c == 'i')
+				if (c == 19)
 					textureRect = { 192, 32, 16, 16 };
-				if (c == 'j')
+				if (c == 20)
 					textureRect = { 160, 48, 16, 16 };
-				if (c == 'k')
+				if (c == 21)
 					textureRect = { 176, 48, 16, 16 };
-				if (c == 'l')
+				if (c == 22)
 					textureRect = { 192, 48, 16, 16 };
-				if (c == 'm')
+				if (c == 23)
 					textureRect = { 208, 32, 16, 16 };
-				if (c == 'n')
+				if (c == 24)
 					textureRect = { 208, 48, 16, 16 };
-				if (c == 'p')
+				if (c == 51)
 					textureRect = { 128, 80, 16, 16 };
-				if (c == 'r')
-					textureRect = { 128, 96, 16, 16 };*/
+				if (c == 52)
+					textureRect = { 128, 96, 16, 16 };
 				if (c != 0 && c != 99)
 				{
-					mapTiles.push_back(new Tile(pos, size, "tiles", textureRect));
+					if(c > 50)
+						mapTiles.push_back(new Tile(pos, size, "tiles", textureRect, false));
+					else
+						mapTiles.push_back(new Tile(pos, size, "tiles", textureRect));
 				}
 				j++;
 			} while (c != 0);
