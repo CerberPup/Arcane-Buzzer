@@ -10,7 +10,9 @@
 #include <Windows.h>
 #include <list>
 
-#define GRID
+//#define GRID
+//#define NOCLIP
+#define COLBOX
 
 class Game
 {
@@ -27,6 +29,7 @@ private:
 	std::thread* animationLoop;
 	void PhysicsLoop();
 	void AnimationLoop();
+	void DeathSpash();
 #ifdef GRID
 	std::vector<sf::Vertex> grid;
 	void DrawGrid();

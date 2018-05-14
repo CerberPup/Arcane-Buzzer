@@ -1,5 +1,6 @@
 #include "Physics.h"
 #include "Engine.h"
+#include "Player.h"
 #include <cmath>
 
 Physics::Physics(float _friction, sf::Vector2f _position, float _maxXVelocity, sf::Vector2f _velocity, sf::Vector2f _size, sf::Vector2f _offset):friction(_friction),position(_position),velocity(_velocity),maxXVelocity(_maxXVelocity),size(_size),offset(_offset)
@@ -67,6 +68,9 @@ void Physics::setVelocityX(float x)
 
 void Physics::setVelocityY(float y)
 {
+	if (velocity.y > 1300)
+		if (Player* p = dynamic_cast<Player*>(this))
+			p->TakeDamage();
 	velocity.y = y;
 }
 
