@@ -11,18 +11,22 @@ Game::Game()
 	clockphysic.restart();
 	animationList.push_back(&player);
 	physicsList.push_back(&player);
-	colisionList.push_back(new Tile(sf::Vector2f(160, 1080-32), sf::Vector2f(32, 32)));
-	colisionList.push_back(new Tile(sf::Vector2f(160+128, 1080-128), sf::Vector2f(32, 32)));
 	for (Tile* tile : map.mapTiles)
 	{
 		if(tile->getColisionPossibility())
 			colisionList.push_back(tile);
+		if (tile->canAnimate())
+			animationList.push_back(tile);
 	}
 	doPhysics = true;
 	doAnimate = true;
 	physicLoop = new std::thread((&Game::PhysicsLoop), this);
 	animationLoop = new std::thread((&Game::AnimationLoop), this);
 	view = sf::View(player.getPos() , sf::Vector2f(Engine::window.getSize()));
+	Engine::window.setView(view);
+	view.zoom(0.99);
+	Engine::window.setView(view);
+	view.zoom(1.01);
 	Engine::window.setView(view);
 }
 
@@ -149,9 +153,6 @@ void Game::Run()
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::K)) {
 			player.TakeDamage();
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
-			player.rotate(10);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Add)) {
 			view.zoom(0.99);

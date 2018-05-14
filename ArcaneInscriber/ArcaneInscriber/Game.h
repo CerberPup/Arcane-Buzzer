@@ -12,12 +12,11 @@
 
 //#define GRID
 //#define NOCLIP
-#define COLBOX
+//#define COLBOX
 
 class Game
 {
 private:
-	Map map;
 	sf::View view;
 	bool doAnimate, doPhysics;
 	std::list<Animable*> animationList;
@@ -30,6 +29,7 @@ private:
 	void PhysicsLoop();
 	void AnimationLoop();
 	void DeathSpash();
+	Map map;
 #ifdef GRID
 	std::vector<sf::Vertex> grid;
 	void DrawGrid();

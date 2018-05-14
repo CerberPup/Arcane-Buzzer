@@ -46,16 +46,58 @@ Map::Map()
 					textureRect = { 208, 32, 16, 16 };
 				if (c == 24)
 					textureRect = { 208, 48, 16, 16 };
+				if (c == 25)
+					textureRect = { 112, 112, 16, 16 };
+				if (c == 26)
+					textureRect = { 128, 112, 16, 16 };
+				if (c == 27)
+					textureRect = { 144, 112, 16, 16 };
+				if (c == 28)
+					textureRect = { 160, 112, 16, 16 };
+				if (c == 29)
+					textureRect = { 176, 112, 16, 16 };
+				if (c == 30)
+					textureRect = { 192, 112, 16, 16 };
+				if (c == 31)
+					textureRect = { 208, 112, 16, 16 };
+				if (c == 32)
+					textureRect = { 224, 112, 16, 16 };
+				if (c == 33)
+					textureRect = { 240, 112, 16, 16 };
+				if (c == 34)
+					textureRect = { 256, 112, 16, 16 };
+				if (c == 35)
+					textureRect = { 0, 112, 16, 16 };
 				if (c == 51)
 					textureRect = { 128, 80, 16, 16 };
 				if (c == 52)
 					textureRect = { 128, 96, 16, 16 };
+				if (c == 79)
+					textureRect = { 0, 0, 32, 32 };
+				if (c == 80)
+					textureRect = { 32, 0, 80, 128 };
+				if (c == 81)
+					textureRect = { 224, 80, 16, 16 };
+				if (c == 82)
+					textureRect = { 224, 96, 16, 16 };
 				if (c != 0 && c != 99)
 				{
-					if(c > 50)
-						mapTiles.push_back(new Tile(pos, size, "tiles", textureRect, false));
+					if (c > 50)
+					{
+						if (c > 80)
+							mapTiles.push_back(new Tile(2, pos, size, "tiles", textureRect, false, true));
+						else
+						{
+							if(c == 80)
+								mapTiles.push_back(new Tile(4, pos, size, "tiles", textureRect, false));
+							else if (c == 79)
+								mapTiles.push_back(new Tile(1, { pos.x, pos.y - 4 }, size, "tiles", textureRect, false));
+							else
+								mapTiles.push_back(new Tile(2, pos, size, "tiles", textureRect, false));
+						}
+					}
 					else
-						mapTiles.push_back(new Tile(pos, size, "tiles", textureRect));
+						mapTiles.push_back(new Tile(2, pos, size, "tiles", textureRect));
 				}
 				j++;
 			} while (c != 0);
@@ -68,11 +110,16 @@ void Map::Display(sf::Vector2f viewCenter, sf::Vector2f viewSize)
 {
 	for (Tile* tile : mapTiles)
 	{
-		if ((tile->getPos().x + tile->getRect().width > (viewCenter.x - viewSize.x / 2)) && (tile->getPos().x < (viewCenter.x + viewSize.x / 2)))
+		if(tile->drawAnyway())
+			Engine::window.draw(*tile);
+		else
 		{
-			if ((tile->getPos().y > (viewCenter.y - viewSize.y / 2)) && (tile->getPos().y < (viewCenter.y + viewSize.y / 2)))
+			if ((tile->getPos().x + tile->getRect().width > (viewCenter.x - viewSize.x / 2)) && (tile->getPos().x < (viewCenter.x + viewSize.x / 2)))
 			{
-				Engine::window.draw(*tile);
+				if ((tile->getPos().y + tile->getRect().height * 4 > (viewCenter.y - viewSize.y / 2)) && (tile->getPos().y < (viewCenter.y + viewSize.y / 2)))
+				{
+					Engine::window.draw(*tile);
+				}
 			}
 		}
 	}
