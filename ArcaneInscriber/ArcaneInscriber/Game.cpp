@@ -39,8 +39,7 @@ Game::~Game()
 	Engine::window.setView(Engine::window.getDefaultView());
 }
 
-//#define NOCLIP
-#define COLBOX
+
 
 void Game::PhysicsLoop()
 {
@@ -74,10 +73,48 @@ void Game::AnimationLoop()
 	}
 }
 
+void Game::DeathSpash() {
+	sf::Texture ScreenCopy;
+	sf::Vector2u size = Engine::window.getSize();
+	ScreenCopy.create(size.x, size.y);
+	ScreenCopy.update(Engine::window);
+	sf::Sprite ScreenCopyS(ScreenCopy);
+	ScreenCopyS.setColor(sf::Color(255,255,255,120));
+	sf::Vector2f f = view.getSize();
+	ScreenCopyS.setPosition(view.getCenter().x-f.x/2, view.getCenter().y - f.y / 2);
+	sf::Font font;
+	if (!font.loadFromFile("Resources/arial.ttf")) {
+		MessageBox(NULL, TEXT("Font not found!"), TEXT("ERROR"), NULL);
+		return;
+	}
+	sf::Text title("YOU DIED", font, 40);
+	title.setStyle(sf::Text::Bold);
+	title.setPosition(view.getCenter().x - title.getGlobalBounds().width/2, view.getCenter().y-40);
+	sf::Color c(180, 30, 30, 0);
+	title.setFillColor(c);
+	for (int i = 0; i < 46; i++)
+	{
+		Engine::window.clear(sf::Color(0, 0, 0, 255));
+		Engine::window.draw(ScreenCopyS);
+		Engine::window.draw(title);
+		Engine::window.display();
+		c.a += 3;
+		Sleep(30);
+		title.setFillColor(c);
+	}
+
+}
+
+
 void Game::Run()
 {
 	while (Engine::state == Engine::State::GAME)
 	{
+		if (player.HP <= 0) {
+			DeathSpash();
+			Engine::state = Engine::State::MAINMENU;
+			continue;
+		}
 		Engine::window.setMouseCursorGrabbed(false);
 		Engine::window.setMouseCursorVisible(false);
 		//Vector2f mouse(Mouse::getPosition(*window));
@@ -144,16 +181,16 @@ void Game::Run()
 				player.animation = Player::JUMP;
 				player.lock.lock();
 				player.onGround = false;
-				player.setVelocity(sf::Vector2f(player.getVelocity().x,-800));
+				player.setVelocity(sf::Vector2f(player.getVelocity().x, -800));
 				player.lock.unlock();
 			}
 #else
-				player.animation = Player::JUMP;
-				player.lock.lock();
-				player.addVelocity(sf::Vector2f(0, -10));
-				player.lock.unlock();
+			player.animation = Player::JUMP;
+			player.lock.lock();
+			player.addVelocity(sf::Vector2f(0, -10));
+			player.lock.unlock();
 #endif
-				
+
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
@@ -162,7 +199,7 @@ void Game::Run()
 				player.animation = Player::MOVE;
 			player.lock.lock();
 #ifndef NOCLIP
-			player.addVelocity( sf::Vector2f(-50,0));
+			player.addVelocity(sf::Vector2f(-50, 0));
 #else
 			player.addVelocity(sf::Vector2f(-10, 0));
 #endif
@@ -179,9 +216,8 @@ void Game::Run()
 #endif
 			player.lock.unlock();
 			if (player.onGround&&player.canAnimate())
-			player.animation = Player::MOVE;
+				player.animation = Player::MOVE;
 		}
-
 		Engine::window.clear(sf::Color(30,30,30));
 #ifdef GRID
 		DrawGrid();
@@ -189,6 +225,7 @@ void Game::Run()
 		map.Display(view.getCenter(), view.getSize());
 		Engine::window.draw(player);
 #ifdef COLBOX
+
 		LOG(0, "Predkosc", player.getVelocity().y);
 		for (Physics* var : physicsList)
 		{
