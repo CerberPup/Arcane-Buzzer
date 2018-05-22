@@ -7,7 +7,7 @@ using namespace std;
 Menu::Menu()
 {
 	Engine::state = Engine::State::EXIT;
-	if (!font.loadFromFile("Resources/Pixeled.ttf"))
+	if (!font.loadFromFile("Resources/Pentagram.ttf"))
 	{
 		MessageBox(NULL, TEXT("Font not found!"), TEXT("ERROR"), NULL);
 		return;

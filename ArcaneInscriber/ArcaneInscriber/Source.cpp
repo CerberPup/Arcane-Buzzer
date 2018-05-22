@@ -12,7 +12,7 @@ using namespace std;
 
 void splash(Engine &e) {
 	sf::Font font;
-	if (!font.loadFromFile("Resources/arial.ttf")) {
+	if (!font.loadFromFile("Resources/Pentagram.ttf")) {
 		MessageBox(NULL, TEXT("Font not found!"), TEXT("ERROR"), NULL);
 		return;
 	}

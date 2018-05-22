@@ -87,7 +87,7 @@ void Game::DeathSpash() {
 	sf::Vector2f f = view.getSize();
 	ScreenCopyS.setPosition(view.getCenter().x-f.x/2, view.getCenter().y - f.y / 2);
 	sf::Font font;
-	if (!font.loadFromFile("Resources/arial.ttf")) {
+	if (!font.loadFromFile("Resources/Pentagram.ttf")) {
 		MessageBox(NULL, TEXT("Font not found!"), TEXT("ERROR"), NULL);
 		return;
 	}
