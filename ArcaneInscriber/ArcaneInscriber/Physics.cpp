@@ -5,6 +5,7 @@
 
 Physics::Physics(float _friction, sf::Vector2f _position, float _maxXVelocity, sf::Vector2f _velocity, sf::Vector2f _size, sf::Vector2f _offset):friction(_friction),position(_position),velocity(_velocity),maxXVelocity(_maxXVelocity),size(_size),offset(_offset)
 {
+
 }
 
 Physics::Physics(sf::Vector2f _position, sf::Vector2f _size, bool _shouldColide, sf::Vector2f _offset) : position(_position), size(_size), offset(_offset),shouldColide(_shouldColide)

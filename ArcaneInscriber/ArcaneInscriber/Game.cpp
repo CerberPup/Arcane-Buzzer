@@ -18,6 +18,12 @@ Game::Game()
 		if (tile->canAnimate())
 			animationList.push_back(tile);
 	}
+	for (Enemy* enemy : map.enemies)
+	{
+		//colisionList.push_back(enemy);
+		animationList.push_back(enemy);
+		physicsList.push_back(enemy);
+	}
 	doPhysics = true;
 	doAnimate = true;
 	physicLoop = new std::thread((&Game::PhysicsLoop), this);
@@ -109,6 +115,10 @@ void Game::DeathSpash() {
 
 }
 
+bool sort(const Enemy* obj1, const Enemy* obj2) 
+{ 
+	return obj1->HP > obj2->HP; 
+}
 
 void Game::Run()
 {
@@ -173,7 +183,7 @@ void Game::Run()
 			player.addVelocity(sf::Vector2f(0, +10));
 #endif
 			player.onGround = true;
-			std::cout << "\n" << Game::view.getCenter().x << ", " << Game::view.getCenter().y << "\t" << Game::view.getSize().x << ", " << Game::view.getSize().y;;
+			std::cout << "\n" << Game::view.getCenter().x << ", " << Game::view.getCenter().y << "\t" << player.getBorder(Physics::SIDE::DOWN) << ", " << map.enemies.at(0)->getBorder(Physics::SIDE::TOP);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 		{
@@ -219,11 +229,52 @@ void Game::Run()
 			if (player.onGround&&player.canAnimate())
 				player.animation = Player::MOVE;
 		}
+
 		Engine::window.clear(sf::Color(30,30,30));
 #ifdef GRID
 		DrawGrid();
 #endif // GRID
 		map.Display(view.getCenter(), view.getSize());
+		for (Enemy* enemy : map.enemies)
+		{
+			if (enemy->state == 2)
+			{
+				if (enemy->getRect().intersects(player.getRect()))
+				{
+					if (enemy->getBorder(Physics::SIDE::TOP) > (player.getBorder(Physics::SIDE::DOWN) + 5.5))
+					{
+						enemy->TakeDamage();
+						player.animation = Player::JUMP;
+						player.lock.lock();
+						player.onGround = false;
+						player.setVelocity(sf::Vector2f(player.getVelocity().x, -500));
+						player.lock.unlock();
+						if (enemy->HP <= 0)
+						{
+							std::sort(map.enemies.begin(), map.enemies.end(), sort);
+							if (enemy->state == 2)
+								enemy->kaputt();
+						}
+					}
+					else
+						player.TakeDamage();
+				}
+				if (enemy->lastDir == Enemy::Direction::RIGHT)
+					enemy->setVelocityX(70);
+				else
+					enemy->setVelocityX(-70);
+				if (enemy->checkPosition(enemy->getPos()))
+				{
+					if (enemy->lastDir == Enemy::Direction::RIGHT)
+						enemy->Face(Enemy::Direction::LEFT);
+					else
+						enemy->Face(Enemy::Direction::RIGHT);
+				}
+				else
+					enemy->actualizePosition(enemy->getPos());
+			}
+			Engine::window.draw(*enemy);
+		}
 		Engine::window.draw(player);
 #ifdef COLBOX
 

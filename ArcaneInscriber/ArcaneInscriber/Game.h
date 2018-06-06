@@ -9,6 +9,7 @@
 #include <thread>
 #include <Windows.h>
 #include <list>
+#include <algorithm>
 
 //#define GRID
 //#define NOCLIP

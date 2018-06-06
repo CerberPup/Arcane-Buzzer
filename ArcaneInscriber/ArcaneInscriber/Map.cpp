@@ -104,10 +104,34 @@ Map::Map()
 		}
 	}
 	mapFile.close();
+	std::string layer[4];
+	layer[0] = "Back1";
+	layer[1] = "Back2";
+	layer[2] = "Back3";
+	layer[3] = "Back4";
+	float backPosX;
+	for (int j = 0; j < 3; j++)
+	{
+		backPosX = j * 1904;
+		for (int i = 0; i < 4; i++)
+		{
+			background.push_back(new Tile(7, { backPosX, -66 }, size, layer[i], { 0, 0, 272, 160 }));
+		}
+	}
+	sf::Vector2f enemyPos = { 1076, 704 };
+	enemies.push_back(new Enemy(enemyPos));
+	enemyPos = { 1300, 950 };
+	enemies.push_back(new Enemy(enemyPos));
+	enemyPos = { 870, 670 };
+	enemies.push_back(new Enemy(enemyPos));
 }
 
 void Map::Display(sf::Vector2f viewCenter, sf::Vector2f viewSize)
 {
+	for (Tile* tile : background)
+	{
+		Engine::window.draw(*tile);
+	}
 	for (Tile* tile : mapTiles)
 	{
 		if(tile->drawAnyway())

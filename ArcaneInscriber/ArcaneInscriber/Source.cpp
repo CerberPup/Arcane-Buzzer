@@ -40,6 +40,11 @@ void initResources() {
 		Engine::setTexture("Resources/City.png", "City");
 		Engine::setTexture("Resources/characters.png", "playerModels");
 		Engine::setTexture("Resources/Tiles.png", "tiles");
+		Engine::setTexture("Resources/slimes.png", "slimes");
+		Engine::setTexture("Resources/Background/1.png", "Back1");
+		Engine::setTexture("Resources/Background/2.png", "Back2");
+		Engine::setTexture("Resources/Background/3.png", "Back3");
+		Engine::setTexture("Resources/Background/4.png", "Back4");
 	}
 	catch (exception ex) {
 		cout << ex.what() << endl;
