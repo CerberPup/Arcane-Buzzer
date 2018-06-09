@@ -72,6 +72,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class for inheritance of objects with physics properties.  
+ <a href="class_physics.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_physics_8h_source.html">Physics.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Physics:</div>
@@ -81,7 +84,7 @@ Inheritance diagram for Physics:</div>
   <map id="Physics_map" name="Physics_map">
 <area href="class_enemy.html" alt="Enemy" shape="rect" coords="0,56,56,80"/>
 <area href="class_player.html" title="Class representing player. " alt="Player" shape="rect" coords="66,56,122,80"/>
-<area href="class_tile.html" alt="Tile" shape="rect" coords="132,56,188,80"/>
+<area href="class_tile.html" title="Class for objects creating map. " alt="Tile" shape="rect" coords="132,56,188,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -92,6 +95,7 @@ Public Types</h2></td></tr>
 <a class="el" href="class_physics.html#a3a5a3167d35d3e3108d6b5ae788e5077abf8fe9d8eaa327b6a36a842681b7cea0">LEFT</a>, 
 <a class="el" href="class_physics.html#a3a5a3167d35d3e3108d6b5ae788e5077a52ef723ba26e00c756f43e4a9b540633">RIGHT</a>
  }</td></tr>
+<tr class="memdesc:a3a5a3167d35d3e3108d6b5ae788e5077"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to determine object side position.  <a href="class_physics.html#a3a5a3167d35d3e3108d6b5ae788e5077">More...</a><br /></td></tr>
 <tr class="separator:a3a5a3167d35d3e3108d6b5ae788e5077"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -100,41 +104,57 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad73203ecebad116bc9f380a9fce90306"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cf4825b218362d2b7f039fe766a0856"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a9cf4825b218362d2b7f039fe766a0856">Physics</a> (float _friction, sf::Vector2f _position, float _maxXVelocity, sf::Vector2f _velocity, sf::Vector2f _size=sf::Vector2f(0, 0), sf::Vector2f _offset=sf::Vector2f(0, 0))</td></tr>
 <tr class="separator:a9cf4825b218362d2b7f039fe766a0856"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7939f065f0aae8a73590aec8d0a0e431"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a7939f065f0aae8a73590aec8d0a0e431">Physics</a> (sf::Vector2f _position, sf::Vector2f _size, sf::Vector2f _offset=sf::Vector2f(0, 0))</td></tr>
-<tr class="separator:a7939f065f0aae8a73590aec8d0a0e431"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af31f6715d338aee7e87175c4ff7d4aab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#af31f6715d338aee7e87175c4ff7d4aab">Physics</a> (sf::Vector2f _position, sf::Vector2f _size, bool _shouldColide=true, sf::Vector2f _offset=sf::Vector2f(0, 0))</td></tr>
 <tr class="separator:af31f6715d338aee7e87175c4ff7d4aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7939f065f0aae8a73590aec8d0a0e431"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a7939f065f0aae8a73590aec8d0a0e431">Physics</a> (sf::Vector2f _position, sf::Vector2f _size, sf::Vector2f _offset=sf::Vector2f(0, 0))</td></tr>
+<tr class="separator:a7939f065f0aae8a73590aec8d0a0e431"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7112459126050e6db0fafb287fbc6f1"><td class="memItemLeft" align="right" valign="top">sf::FloatRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ac7112459126050e6db0fafb287fbc6f1">getRect</a> ()</td></tr>
+<tr class="memdesc:ac7112459126050e6db0fafb287fbc6f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns object rectangle.  <a href="#ac7112459126050e6db0fafb287fbc6f1">More...</a><br /></td></tr>
 <tr class="separator:ac7112459126050e6db0fafb287fbc6f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d10ce3f2161d7cce8d7e15b4fc110df"><td class="memItemLeft" align="right" valign="top">sf::Vector2i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a9d10ce3f2161d7cce8d7e15b4fc110df">getCoord</a> ()</td></tr>
+<tr class="memdesc:a9d10ce3f2161d7cce8d7e15b4fc110df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns object position.  <a href="#a9d10ce3f2161d7cce8d7e15b4fc110df">More...</a><br /></td></tr>
 <tr class="separator:a9d10ce3f2161d7cce8d7e15b4fc110df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad85a3df693d588f8ff528566c5218533"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ad85a3df693d588f8ff528566c5218533">getFriction</a> ()</td></tr>
+<tr class="memdesc:ad85a3df693d588f8ff528566c5218533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns object friction.  <a href="#ad85a3df693d588f8ff528566c5218533">More...</a><br /></td></tr>
 <tr class="separator:ad85a3df693d588f8ff528566c5218533"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7030afbd6b5dd2ab334bbbeff16271a"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ad7030afbd6b5dd2ab334bbbeff16271a">getPos</a> ()</td></tr>
+<tr class="memdesc:ad7030afbd6b5dd2ab334bbbeff16271a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns object position.  <a href="#ad7030afbd6b5dd2ab334bbbeff16271a">More...</a><br /></td></tr>
 <tr class="separator:ad7030afbd6b5dd2ab334bbbeff16271a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c0d2a818c79d3b11fc597cdd6411b5c"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a5c0d2a818c79d3b11fc597cdd6411b5c">getVelocity</a> ()</td></tr>
+<tr class="memdesc:a5c0d2a818c79d3b11fc597cdd6411b5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns object velocity.  <a href="#a5c0d2a818c79d3b11fc597cdd6411b5c">More...</a><br /></td></tr>
 <tr class="separator:a5c0d2a818c79d3b11fc597cdd6411b5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1992494c6213f00aa3865865ef9a12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ab1992494c6213f00aa3865865ef9a12f">setFriction</a> (float _friction)</td></tr>
+<tr class="memdesc:ab1992494c6213f00aa3865865ef9a12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets object friction.  <a href="#ab1992494c6213f00aa3865865ef9a12f">More...</a><br /></td></tr>
 <tr class="separator:ab1992494c6213f00aa3865865ef9a12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ca953c0dfe3030f5cc8d4a14dc566e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a6ca953c0dfe3030f5cc8d4a14dc566e4">setPosition</a> (sf::Vector2f _position)</td></tr>
+<tr class="memdesc:a6ca953c0dfe3030f5cc8d4a14dc566e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets object position.  <a href="#a6ca953c0dfe3030f5cc8d4a14dc566e4">More...</a><br /></td></tr>
 <tr class="separator:a6ca953c0dfe3030f5cc8d4a14dc566e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9922eb23115f5b3c82863ed008626cd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a9922eb23115f5b3c82863ed008626cd4">setVelocity</a> (sf::Vector2f _velocity)</td></tr>
+<tr class="memdesc:a9922eb23115f5b3c82863ed008626cd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets object velocity.  <a href="#a9922eb23115f5b3c82863ed008626cd4">More...</a><br /></td></tr>
 <tr class="separator:a9922eb23115f5b3c82863ed008626cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59cfd3aa8ef7fa6c9374b2efeefe89c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a59cfd3aa8ef7fa6c9374b2efeefe89c2">setVelocityX</a> (float x)</td></tr>
+<tr class="memdesc:a59cfd3aa8ef7fa6c9374b2efeefe89c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets object horizontal velocity.  <a href="#a59cfd3aa8ef7fa6c9374b2efeefe89c2">More...</a><br /></td></tr>
 <tr class="separator:a59cfd3aa8ef7fa6c9374b2efeefe89c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f876f27a29447f899b1b2b082aedfc0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a2f876f27a29447f899b1b2b082aedfc0">setVelocityY</a> (float y)</td></tr>
+<tr class="memdesc:a2f876f27a29447f899b1b2b082aedfc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets object vertical velocity.  <a href="#a2f876f27a29447f899b1b2b082aedfc0">More...</a><br /></td></tr>
 <tr class="separator:a2f876f27a29447f899b1b2b082aedfc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf8ad7abd52ec1cbdaaad9f16c0243b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#acf8ad7abd52ec1cbdaaad9f16c0243b4">addVelocity</a> (sf::Vector2f _velocity)</td></tr>
+<tr class="memdesc:acf8ad7abd52ec1cbdaaad9f16c0243b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds velocity to object, capped at maxXVelocity value.  <a href="#acf8ad7abd52ec1cbdaaad9f16c0243b4">More...</a><br /></td></tr>
 <tr class="separator:acf8ad7abd52ec1cbdaaad9f16c0243b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab55c2f723c28adef0c77b7ce0d98ca83"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ab55c2f723c28adef0c77b7ce0d98ca83">getColisionPossibility</a> ()</td></tr>
+<tr class="memdesc:ab55c2f723c28adef0c77b7ce0d98ca83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if object might colide.  <a href="#ab55c2f723c28adef0c77b7ce0d98ca83">More...</a><br /></td></tr>
 <tr class="separator:ab55c2f723c28adef0c77b7ce0d98ca83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad061fb6533d8f78f76acef6dc9aee9e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#aad061fb6533d8f78f76acef6dc9aee9e">getMaxXVelocity</a> ()</td></tr>
+<tr class="memdesc:aad061fb6533d8f78f76acef6dc9aee9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns max horizontal velocity.  <a href="#aad061fb6533d8f78f76acef6dc9aee9e">More...</a><br /></td></tr>
 <tr class="separator:aad061fb6533d8f78f76acef6dc9aee9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1420a9ae3d55c2fd8df9709da52b762"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#aa1420a9ae3d55c2fd8df9709da52b762">move</a> (sf::Vector2f _position)</td></tr>
+<tr class="memdesc:aa1420a9ae3d55c2fd8df9709da52b762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move object to position.  <a href="#aa1420a9ae3d55c2fd8df9709da52b762">More...</a><br /></td></tr>
 <tr class="separator:aa1420a9ae3d55c2fd8df9709da52b762"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae916d5bb42f5ac114ebf68ab8cbf6184"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ae916d5bb42f5ac114ebf68ab8cbf6184">move</a> (float X, float Y)</td></tr>
+<tr class="memdesc:ae916d5bb42f5ac114ebf68ab8cbf6184"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move object to position.  <a href="#ae916d5bb42f5ac114ebf68ab8cbf6184">More...</a><br /></td></tr>
 <tr class="separator:ae916d5bb42f5ac114ebf68ab8cbf6184"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a237487075f8dd7bccc91ad6a99ccb856"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a237487075f8dd7bccc91ad6a99ccb856">drawColisionBox</a> ()</td></tr>
+<tr class="memdesc:a237487075f8dd7bccc91ad6a99ccb856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws collision box around object.  <a href="#a237487075f8dd7bccc91ad6a99ccb856">More...</a><br /></td></tr>
 <tr class="separator:a237487075f8dd7bccc91ad6a99ccb856"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a045c3788e28059d3920136499942490f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a045c3788e28059d3920136499942490f">~Physics</a> ()</td></tr>
 <tr class="separator:a045c3788e28059d3920136499942490f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,11 +162,15 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ac084b00ff210e21f51d0b3cf2f0c7361"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ac084b00ff210e21f51d0b3cf2f0c7361">lock</a></td></tr>
+<tr class="memdesc:ac084b00ff210e21f51d0b3cf2f0c7361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to lock velocity modifications.  <a href="#ac084b00ff210e21f51d0b3cf2f0c7361">More...</a><br /></td></tr>
 <tr class="separator:ac084b00ff210e21f51d0b3cf2f0c7361"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a925599380dd9204a8a50f900f305e7eb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a925599380dd9204a8a50f900f305e7eb">onGround</a></td></tr>
+<tr class="memdesc:a925599380dd9204a8a50f900f305e7eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can jump?  <a href="#a925599380dd9204a8a50f900f305e7eb">More...</a><br /></td></tr>
 <tr class="separator:a925599380dd9204a8a50f900f305e7eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class for inheritance of objects with physics properties. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a3a5a3167d35d3e3108d6b5ae788e5077"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a5a3167d35d3e3108d6b5ae788e5077">&#9670;&nbsp;</a></span>SIDE</h2>
 
@@ -158,6 +182,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Used to determine object side position. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3a5a3167d35d3e3108d6b5ae788e5077acf8a6aed498953ab3a57ba226addd48b"></a>TOP&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3a5a3167d35d3e3108d6b5ae788e5077afc81ddab27c623c836ca4b85ebe83959"></a>DOWN&#160;</td><td class="fielddoc"></td></tr>
@@ -220,42 +246,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a7939f065f0aae8a73590aec8d0a0e431"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7939f065f0aae8a73590aec8d0a0e431">&#9670;&nbsp;</a></span>Physics() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Physics::Physics </td>
-          <td>(</td>
-          <td class="paramtype">sf::Vector2f&#160;</td>
-          <td class="paramname"><em>_position</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">sf::Vector2f&#160;</td>
-          <td class="paramname"><em>_size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">sf::Vector2f&#160;</td>
-          <td class="paramname"><em>_offset</em> = <code>sf::Vector2f(0,&#160;0)</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="af31f6715d338aee7e87175c4ff7d4aab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af31f6715d338aee7e87175c4ff7d4aab">&#9670;&nbsp;</a></span>Physics() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af31f6715d338aee7e87175c4ff7d4aab">&#9670;&nbsp;</a></span>Physics() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -277,6 +269,40 @@ Public Attributes</h2></td></tr>
           <td></td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>_shouldColide</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Vector2f&#160;</td>
+          <td class="paramname"><em>_offset</em> = <code>sf::Vector2f(0,&#160;0)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7939f065f0aae8a73590aec8d0a0e431"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7939f065f0aae8a73590aec8d0a0e431">&#9670;&nbsp;</a></span>Physics() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Physics::Physics </td>
+          <td>(</td>
+          <td class="paramtype">sf::Vector2f&#160;</td>
+          <td class="paramname"><em>_position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Vector2f&#160;</td>
+          <td class="paramname"><em>_size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -336,6 +362,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Adds velocity to object, capped at maxXVelocity value. </p>
+
 </div>
 </div>
 <a id="a237487075f8dd7bccc91ad6a99ccb856"></a>
@@ -352,6 +380,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Draws collision box around object. </p>
 
 </div>
 </div>
@@ -370,6 +400,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Calculate edge position. </p><dl class="section return"><dt>Returns</dt><dd>Position  side = requested side </dd></dl>
 
 </div>
 </div>
@@ -388,6 +419,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns if object might colide. </p>
+
 </div>
 </div>
 <a id="a9d10ce3f2161d7cce8d7e15b4fc110df"></a>
@@ -404,6 +437,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns object position. </p>
 
 </div>
 </div>
@@ -422,6 +457,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns object friction. </p>
+
 </div>
 </div>
 <a id="aad061fb6533d8f78f76acef6dc9aee9e"></a>
@@ -438,6 +475,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns max horizontal velocity. </p>
 
 </div>
 </div>
@@ -456,6 +495,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns object position. </p>
+
 </div>
 </div>
 <a id="ac7112459126050e6db0fafb287fbc6f1"></a>
@@ -472,6 +513,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns object rectangle. </p>
 
 </div>
 </div>
@@ -490,6 +533,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns object velocity. </p>
+
 </div>
 </div>
 <a id="aa1420a9ae3d55c2fd8df9709da52b762"></a>
@@ -507,6 +552,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Move object to position. </p>
 
 </div>
 </div>
@@ -536,6 +583,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Move object to position. </p>
+
 </div>
 </div>
 <a id="ab1992494c6213f00aa3865865ef9a12f"></a>
@@ -553,6 +602,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets object friction. </p>
 
 </div>
 </div>
@@ -572,6 +623,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets object position. </p>
+
 </div>
 </div>
 <a id="a9922eb23115f5b3c82863ed008626cd4"></a>
@@ -589,6 +642,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets object velocity. </p>
 
 </div>
 </div>
@@ -608,6 +663,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets object horizontal velocity. </p>
+
 </div>
 </div>
 <a id="a2f876f27a29447f899b1b2b082aedfc0"></a>
@@ -626,6 +683,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets object vertical velocity. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -641,6 +700,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used to lock velocity modifications. </p>
+
 </div>
 </div>
 <a id="a925599380dd9204a8a50f900f305e7eb"></a>
@@ -654,6 +715,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Can jump? </p>
 
 </div>
 </div>

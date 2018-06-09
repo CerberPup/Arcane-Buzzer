@@ -70,6 +70,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class for objects creating map.  
+ <a href="class_tile.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_tile_8h_source.html">Tile.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Tile:</div>
@@ -77,23 +80,25 @@ Inheritance diagram for Tile:</div>
  <div class="center">
   <img src="class_tile.png" usemap="#Tile_map" alt=""/>
   <map id="Tile_map" name="Tile_map">
-<area href="class_entity.html" alt="Entity" shape="rect" coords="0,0,93,24"/>
-<area href="class_physics.html" alt="Physics" shape="rect" coords="309,0,402,24"/>
-<area href="class_animable.html" alt="Animable" shape="rect" coords="412,0,505,24"/>
+<area href="class_entity.html" title="Class for inheritance of objects with sprites. " alt="Entity" shape="rect" coords="0,0,93,24"/>
+<area href="class_physics.html" title="Class for inheritance of objects with physics properties. " alt="Physics" shape="rect" coords="309,0,402,24"/>
+<area href="class_animable.html" title="Base clase for enabling object animation. " alt="Animable" shape="rect" coords="412,0,505,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aeeb5593bb6b75aae2edfcccbc84ab378"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile.html#aeeb5593bb6b75aae2edfcccbc84ab378">Tile</a> ()</td></tr>
-<tr class="separator:aeeb5593bb6b75aae2edfcccbc84ab378"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63cdda1f253d318f74d6fa86ad9ca441"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile.html#a63cdda1f253d318f74d6fa86ad9ca441">Tile</a> (int _scale, sf::Vector2f _pos, sf::Vector2f _size, std::string _texture=&quot;&quot;, sf::IntRect _textureRect=sf::IntRect(0, 0, 32, 32), bool _shouldColide=true, bool _shouldAnimate=false)</td></tr>
+<tr class="memdesc:a63cdda1f253d318f74d6fa86ad9ca441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates new object.  <a href="#a63cdda1f253d318f74d6fa86ad9ca441">More...</a><br /></td></tr>
 <tr class="separator:a63cdda1f253d318f74d6fa86ad9ca441"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b1fd724b92af12cc6f28edd99a14d01"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile.html#a3b1fd724b92af12cc6f28edd99a14d01">Update</a> ()</td></tr>
+<tr class="memdesc:a3b1fd724b92af12cc6f28edd99a14d01"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_animable.html" title="Base clase for enabling object animation. ">Animable</a> objects have to have function for updating sprite.  <a href="#a3b1fd724b92af12cc6f28edd99a14d01">More...</a><br /></td></tr>
 <tr class="separator:a3b1fd724b92af12cc6f28edd99a14d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23865b9e2b77ce2a700db50a35bc412c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile.html#a23865b9e2b77ce2a700db50a35bc412c">canAnimate</a> ()</td></tr>
+<tr class="memdesc:a23865b9e2b77ce2a700db50a35bc412c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns animable.  <a href="#a23865b9e2b77ce2a700db50a35bc412c">More...</a><br /></td></tr>
 <tr class="separator:a23865b9e2b77ce2a700db50a35bc412c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af28b0033a499bfb53f6fad1920c1fd20"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile.html#af28b0033a499bfb53f6fad1920c1fd20">drawAnyway</a> ()</td></tr>
+<tr class="memdesc:af28b0033a499bfb53f6fad1920c1fd20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should be drawn outside player vision.  <a href="#af28b0033a499bfb53f6fad1920c1fd20">More...</a><br /></td></tr>
 <tr class="separator:af28b0033a499bfb53f6fad1920c1fd20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98634abbd93fa13d0578d7103202d03d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile.html#a98634abbd93fa13d0578d7103202d03d">~Tile</a> ()</td></tr>
 <tr class="separator:a98634abbd93fa13d0578d7103202d03d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -107,41 +112,57 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad73203ecebad116bc9f380a9fce90306 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cf4825b218362d2b7f039fe766a0856 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a9cf4825b218362d2b7f039fe766a0856">Physics</a> (float _friction, sf::Vector2f _position, float _maxXVelocity, sf::Vector2f _velocity, sf::Vector2f _size=sf::Vector2f(0, 0), sf::Vector2f _offset=sf::Vector2f(0, 0))</td></tr>
 <tr class="separator:a9cf4825b218362d2b7f039fe766a0856 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7939f065f0aae8a73590aec8d0a0e431 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a7939f065f0aae8a73590aec8d0a0e431">Physics</a> (sf::Vector2f _position, sf::Vector2f _size, sf::Vector2f _offset=sf::Vector2f(0, 0))</td></tr>
-<tr class="separator:a7939f065f0aae8a73590aec8d0a0e431 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af31f6715d338aee7e87175c4ff7d4aab inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#af31f6715d338aee7e87175c4ff7d4aab">Physics</a> (sf::Vector2f _position, sf::Vector2f _size, bool _shouldColide=true, sf::Vector2f _offset=sf::Vector2f(0, 0))</td></tr>
 <tr class="separator:af31f6715d338aee7e87175c4ff7d4aab inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7939f065f0aae8a73590aec8d0a0e431 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a7939f065f0aae8a73590aec8d0a0e431">Physics</a> (sf::Vector2f _position, sf::Vector2f _size, sf::Vector2f _offset=sf::Vector2f(0, 0))</td></tr>
+<tr class="separator:a7939f065f0aae8a73590aec8d0a0e431 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7112459126050e6db0fafb287fbc6f1 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">sf::FloatRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ac7112459126050e6db0fafb287fbc6f1">getRect</a> ()</td></tr>
+<tr class="memdesc:ac7112459126050e6db0fafb287fbc6f1 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns object rectangle.  <a href="class_physics.html#ac7112459126050e6db0fafb287fbc6f1">More...</a><br /></td></tr>
 <tr class="separator:ac7112459126050e6db0fafb287fbc6f1 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d10ce3f2161d7cce8d7e15b4fc110df inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">sf::Vector2i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a9d10ce3f2161d7cce8d7e15b4fc110df">getCoord</a> ()</td></tr>
+<tr class="memdesc:a9d10ce3f2161d7cce8d7e15b4fc110df inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns object position.  <a href="class_physics.html#a9d10ce3f2161d7cce8d7e15b4fc110df">More...</a><br /></td></tr>
 <tr class="separator:a9d10ce3f2161d7cce8d7e15b4fc110df inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad85a3df693d588f8ff528566c5218533 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ad85a3df693d588f8ff528566c5218533">getFriction</a> ()</td></tr>
+<tr class="memdesc:ad85a3df693d588f8ff528566c5218533 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns object friction.  <a href="class_physics.html#ad85a3df693d588f8ff528566c5218533">More...</a><br /></td></tr>
 <tr class="separator:ad85a3df693d588f8ff528566c5218533 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7030afbd6b5dd2ab334bbbeff16271a inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ad7030afbd6b5dd2ab334bbbeff16271a">getPos</a> ()</td></tr>
+<tr class="memdesc:ad7030afbd6b5dd2ab334bbbeff16271a inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns object position.  <a href="class_physics.html#ad7030afbd6b5dd2ab334bbbeff16271a">More...</a><br /></td></tr>
 <tr class="separator:ad7030afbd6b5dd2ab334bbbeff16271a inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c0d2a818c79d3b11fc597cdd6411b5c inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a5c0d2a818c79d3b11fc597cdd6411b5c">getVelocity</a> ()</td></tr>
+<tr class="memdesc:a5c0d2a818c79d3b11fc597cdd6411b5c inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns object velocity.  <a href="class_physics.html#a5c0d2a818c79d3b11fc597cdd6411b5c">More...</a><br /></td></tr>
 <tr class="separator:a5c0d2a818c79d3b11fc597cdd6411b5c inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1992494c6213f00aa3865865ef9a12f inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ab1992494c6213f00aa3865865ef9a12f">setFriction</a> (float _friction)</td></tr>
+<tr class="memdesc:ab1992494c6213f00aa3865865ef9a12f inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets object friction.  <a href="class_physics.html#ab1992494c6213f00aa3865865ef9a12f">More...</a><br /></td></tr>
 <tr class="separator:ab1992494c6213f00aa3865865ef9a12f inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ca953c0dfe3030f5cc8d4a14dc566e4 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a6ca953c0dfe3030f5cc8d4a14dc566e4">setPosition</a> (sf::Vector2f _position)</td></tr>
+<tr class="memdesc:a6ca953c0dfe3030f5cc8d4a14dc566e4 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets object position.  <a href="class_physics.html#a6ca953c0dfe3030f5cc8d4a14dc566e4">More...</a><br /></td></tr>
 <tr class="separator:a6ca953c0dfe3030f5cc8d4a14dc566e4 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9922eb23115f5b3c82863ed008626cd4 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a9922eb23115f5b3c82863ed008626cd4">setVelocity</a> (sf::Vector2f _velocity)</td></tr>
+<tr class="memdesc:a9922eb23115f5b3c82863ed008626cd4 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets object velocity.  <a href="class_physics.html#a9922eb23115f5b3c82863ed008626cd4">More...</a><br /></td></tr>
 <tr class="separator:a9922eb23115f5b3c82863ed008626cd4 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59cfd3aa8ef7fa6c9374b2efeefe89c2 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a59cfd3aa8ef7fa6c9374b2efeefe89c2">setVelocityX</a> (float x)</td></tr>
+<tr class="memdesc:a59cfd3aa8ef7fa6c9374b2efeefe89c2 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets object horizontal velocity.  <a href="class_physics.html#a59cfd3aa8ef7fa6c9374b2efeefe89c2">More...</a><br /></td></tr>
 <tr class="separator:a59cfd3aa8ef7fa6c9374b2efeefe89c2 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f876f27a29447f899b1b2b082aedfc0 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a2f876f27a29447f899b1b2b082aedfc0">setVelocityY</a> (float y)</td></tr>
+<tr class="memdesc:a2f876f27a29447f899b1b2b082aedfc0 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets object vertical velocity.  <a href="class_physics.html#a2f876f27a29447f899b1b2b082aedfc0">More...</a><br /></td></tr>
 <tr class="separator:a2f876f27a29447f899b1b2b082aedfc0 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf8ad7abd52ec1cbdaaad9f16c0243b4 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#acf8ad7abd52ec1cbdaaad9f16c0243b4">addVelocity</a> (sf::Vector2f _velocity)</td></tr>
+<tr class="memdesc:acf8ad7abd52ec1cbdaaad9f16c0243b4 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds velocity to object, capped at maxXVelocity value.  <a href="class_physics.html#acf8ad7abd52ec1cbdaaad9f16c0243b4">More...</a><br /></td></tr>
 <tr class="separator:acf8ad7abd52ec1cbdaaad9f16c0243b4 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab55c2f723c28adef0c77b7ce0d98ca83 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ab55c2f723c28adef0c77b7ce0d98ca83">getColisionPossibility</a> ()</td></tr>
+<tr class="memdesc:ab55c2f723c28adef0c77b7ce0d98ca83 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if object might colide.  <a href="class_physics.html#ab55c2f723c28adef0c77b7ce0d98ca83">More...</a><br /></td></tr>
 <tr class="separator:ab55c2f723c28adef0c77b7ce0d98ca83 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad061fb6533d8f78f76acef6dc9aee9e inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#aad061fb6533d8f78f76acef6dc9aee9e">getMaxXVelocity</a> ()</td></tr>
+<tr class="memdesc:aad061fb6533d8f78f76acef6dc9aee9e inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns max horizontal velocity.  <a href="class_physics.html#aad061fb6533d8f78f76acef6dc9aee9e">More...</a><br /></td></tr>
 <tr class="separator:aad061fb6533d8f78f76acef6dc9aee9e inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1420a9ae3d55c2fd8df9709da52b762 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#aa1420a9ae3d55c2fd8df9709da52b762">move</a> (sf::Vector2f _position)</td></tr>
+<tr class="memdesc:aa1420a9ae3d55c2fd8df9709da52b762 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move object to position.  <a href="class_physics.html#aa1420a9ae3d55c2fd8df9709da52b762">More...</a><br /></td></tr>
 <tr class="separator:aa1420a9ae3d55c2fd8df9709da52b762 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae916d5bb42f5ac114ebf68ab8cbf6184 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ae916d5bb42f5ac114ebf68ab8cbf6184">move</a> (float X, float Y)</td></tr>
+<tr class="memdesc:ae916d5bb42f5ac114ebf68ab8cbf6184 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move object to position.  <a href="class_physics.html#ae916d5bb42f5ac114ebf68ab8cbf6184">More...</a><br /></td></tr>
 <tr class="separator:ae916d5bb42f5ac114ebf68ab8cbf6184 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a237487075f8dd7bccc91ad6a99ccb856 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a237487075f8dd7bccc91ad6a99ccb856">drawColisionBox</a> ()</td></tr>
+<tr class="memdesc:a237487075f8dd7bccc91ad6a99ccb856 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws collision box around object.  <a href="class_physics.html#a237487075f8dd7bccc91ad6a99ccb856">More...</a><br /></td></tr>
 <tr class="separator:a237487075f8dd7bccc91ad6a99ccb856 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a045c3788e28059d3920136499942490f inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a045c3788e28059d3920136499942490f">~Physics</a> ()</td></tr>
 <tr class="separator:a045c3788e28059d3920136499942490f inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,41 +178,32 @@ Additional Inherited Members</h2></td></tr>
 <a class="el" href="class_physics.html#a3a5a3167d35d3e3108d6b5ae788e5077abf8fe9d8eaa327b6a36a842681b7cea0">LEFT</a>, 
 <a class="el" href="class_physics.html#a3a5a3167d35d3e3108d6b5ae788e5077a52ef723ba26e00c756f43e4a9b540633">RIGHT</a>
  }</td></tr>
+<tr class="memdesc:a3a5a3167d35d3e3108d6b5ae788e5077"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to determine object side position.  <a href="class_physics.html#a3a5a3167d35d3e3108d6b5ae788e5077">More...</a><br /></td></tr>
 <tr class="separator:a3a5a3167d35d3e3108d6b5ae788e5077 inherit pub_types_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_entity"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_entity')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_entity.html">Entity</a></td></tr>
 <tr class="memitem:a48ef4ab143b8d0211877c9f6be42e824 inherit pub_attribs_class_entity"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a48ef4ab143b8d0211877c9f6be42e824">sprite</a></td></tr>
+<tr class="memdesc:a48ef4ab143b8d0211877c9f6be42e824 inherit pub_attribs_class_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps sprite.  <a href="class_entity.html#a48ef4ab143b8d0211877c9f6be42e824">More...</a><br /></td></tr>
 <tr class="separator:a48ef4ab143b8d0211877c9f6be42e824 inherit pub_attribs_class_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_physics"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_physics')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_physics.html">Physics</a></td></tr>
 <tr class="memitem:ac084b00ff210e21f51d0b3cf2f0c7361 inherit pub_attribs_class_physics"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ac084b00ff210e21f51d0b3cf2f0c7361">lock</a></td></tr>
+<tr class="memdesc:ac084b00ff210e21f51d0b3cf2f0c7361 inherit pub_attribs_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to lock velocity modifications.  <a href="class_physics.html#ac084b00ff210e21f51d0b3cf2f0c7361">More...</a><br /></td></tr>
 <tr class="separator:ac084b00ff210e21f51d0b3cf2f0c7361 inherit pub_attribs_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a925599380dd9204a8a50f900f305e7eb inherit pub_attribs_class_physics"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a925599380dd9204a8a50f900f305e7eb">onGround</a></td></tr>
+<tr class="memdesc:a925599380dd9204a8a50f900f305e7eb inherit pub_attribs_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can jump?  <a href="class_physics.html#a925599380dd9204a8a50f900f305e7eb">More...</a><br /></td></tr>
 <tr class="separator:a925599380dd9204a8a50f900f305e7eb inherit pub_attribs_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_animable"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_animable')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_animable.html">Animable</a></td></tr>
 <tr class="memitem:ad7ef9a59ecb0f261095492478df9af63 inherit pub_attribs_class_animable"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animable.html#ad7ef9a59ecb0f261095492478df9af63">animation</a></td></tr>
+<tr class="memdesc:ad7ef9a59ecb0f261095492478df9af63 inherit pub_attribs_class_animable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current animation.  <a href="class_animable.html#ad7ef9a59ecb0f261095492478df9af63">More...</a><br /></td></tr>
 <tr class="separator:ad7ef9a59ecb0f261095492478df9af63 inherit pub_attribs_class_animable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af187b86d7753882ac169cb39d72cc18e inherit pub_attribs_class_animable"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animable.html#af187b86d7753882ac169cb39d72cc18e">animationcounter</a></td></tr>
+<tr class="memdesc:af187b86d7753882ac169cb39d72cc18e inherit pub_attribs_class_animable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current frame in animation.  <a href="class_animable.html#af187b86d7753882ac169cb39d72cc18e">More...</a><br /></td></tr>
 <tr class="separator:af187b86d7753882ac169cb39d72cc18e inherit pub_attribs_class_animable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aeeb5593bb6b75aae2edfcccbc84ab378"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeeb5593bb6b75aae2edfcccbc84ab378">&#9670;&nbsp;</a></span>Tile() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Tile::Tile </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class for objects creating map. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a63cdda1f253d318f74d6fa86ad9ca441"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63cdda1f253d318f74d6fa86ad9ca441">&#9670;&nbsp;</a></span>Tile() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a63cdda1f253d318f74d6fa86ad9ca441">&#9670;&nbsp;</a></span>Tile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -246,6 +258,8 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Creates new object. </p>
+
 </div>
 </div>
 <a id="a98634abbd93fa13d0578d7103202d03d"></a>
@@ -289,6 +303,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns animable. </p>
+
 <p>Implements <a class="el" href="class_animable.html#ac124f8ebc91af42034c87de54f1741ae">Animable</a>.</p>
 
 </div>
@@ -307,6 +323,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Should be drawn outside player vision. </p>
 
 </div>
 </div>
@@ -332,6 +350,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="class_animable.html" title="Base clase for enabling object animation. ">Animable</a> objects have to have function for updating sprite. </p>
 
 <p>Implements <a class="el" href="class_animable.html#aeeb68d5917d9ef00e3e89bc498aa361d">Animable</a>.</p>
 

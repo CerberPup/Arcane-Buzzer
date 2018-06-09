@@ -74,6 +74,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class providing global functionality.  
+ <a href="class_engine.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_engine_8h_source.html">Engine.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -83,11 +86,13 @@ Public Types</h2></td></tr>
 <a class="el" href="class_engine.html#a1403bad7446a530c96c2503c45e8e0d0a3d6fcced3122f5d19127659ceee2f1eb">GAME</a>, 
 <a class="el" href="class_engine.html#a1403bad7446a530c96c2503c45e8e0d0a2248b814529182477ae8439d9c63017b">EXIT</a>
  }</td></tr>
+<tr class="memdesc:a1403bad7446a530c96c2503c45e8e0d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current game state.  <a href="class_engine.html#a1403bad7446a530c96c2503c45e8e0d0">More...</a><br /></td></tr>
 <tr class="separator:a1403bad7446a530c96c2503c45e8e0d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aadd451a31b6b6756635cb5541d4930a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_engine.html#aadd451a31b6b6756635cb5541d4930a8">Engine</a> (int w, int h)</td></tr>
+<tr class="memdesc:aadd451a31b6b6756635cb5541d4930a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates window.  <a href="#aadd451a31b6b6756635cb5541d4930a8">More...</a><br /></td></tr>
 <tr class="separator:aadd451a31b6b6756635cb5541d4930a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ef7030a089ecb30bbfcb9e43094717a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_engine.html#a8ef7030a089ecb30bbfcb9e43094717a">~Engine</a> ()</td></tr>
 <tr class="separator:a8ef7030a089ecb30bbfcb9e43094717a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -95,33 +100,45 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a0d78c58e5917de3d5570088649f45f22"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; sf::Texture &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_engine.html#a0d78c58e5917de3d5570088649f45f22">getTexture</a> (std::string Name)</td></tr>
+<tr class="memdesc:a0d78c58e5917de3d5570088649f45f22"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns texture from name  <a href="#a0d78c58e5917de3d5570088649f45f22">More...</a><br /></td></tr>
 <tr class="separator:a0d78c58e5917de3d5570088649f45f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ba94a603ed176b04226448177d0b23c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_engine.html#a1ba94a603ed176b04226448177d0b23c">setTexture</a> (std::string Path, std::string Name)</td></tr>
+<tr class="memdesc:a1ba94a603ed176b04226448177d0b23c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads texture to program memmory.  <a href="#a1ba94a603ed176b04226448177d0b23c">More...</a><br /></td></tr>
 <tr class="separator:a1ba94a603ed176b04226448177d0b23c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8763b9d1ce3d84587eba5e6e35a69ed3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_engine.html#a8763b9d1ce3d84587eba5e6e35a69ed3">Physic</a> (<a class="el" href="class_physics.html">Physics</a> *obj, float &amp;elapsed, const std::list&lt; <a class="el" href="class_physics.html">Physics</a> *&gt; &amp;={})</td></tr>
+<tr class="memdesc:a8763b9d1ce3d84587eba5e6e35a69ed3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine object position based on elapsed time and collidable environment.  <a href="#a8763b9d1ce3d84587eba5e6e35a69ed3">More...</a><br /></td></tr>
 <tr class="separator:a8763b9d1ce3d84587eba5e6e35a69ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bbe7588dd48539030c91f0d29a44c3e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_engine.html#a8bbe7588dd48539030c91f0d29a44c3e">PhysicNoClip</a> (<a class="el" href="class_physics.html">Physics</a> *obj, float &amp;elapsed, const std::list&lt; <a class="el" href="class_physics.html">Physics</a> *&gt; &amp;={})</td></tr>
+<tr class="memdesc:a8bbe7588dd48539030c91f0d29a44c3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine object position based on elapsed time and collidable environment NO GRAVITY.  <a href="#a8bbe7588dd48539030c91f0d29a44c3e">More...</a><br /></td></tr>
 <tr class="separator:a8bbe7588dd48539030c91f0d29a44c3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd81f6301f478c3fb1ba42b422e3a716"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_engine.html#abd81f6301f478c3fb1ba42b422e3a716">toggleFullScreen</a> (bool full)</td></tr>
+<tr class="memdesc:abd81f6301f478c3fb1ba42b422e3a716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes game fullscreen.  <a href="#abd81f6301f478c3fb1ba42b422e3a716">More...</a><br /></td></tr>
 <tr class="separator:abd81f6301f478c3fb1ba42b422e3a716"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc9f7a54680725b9b00f0420a4623a30"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_engine.html#abc9f7a54680725b9b00f0420a4623a30">setStyle</a> (sf::Uint32 style)</td></tr>
+<tr class="memdesc:abc9f7a54680725b9b00f0420a4623a30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes window borderless.  <a href="#abc9f7a54680725b9b00f0420a4623a30">More...</a><br /></td></tr>
 <tr class="separator:abc9f7a54680725b9b00f0420a4623a30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a404a88b10b7717c17bb3e1736537e0be"><td class="memItemLeft" align="right" valign="top">const unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_engine.html#a404a88b10b7717c17bb3e1736537e0be">width</a></td></tr>
+<tr class="memdesc:a404a88b10b7717c17bb3e1736537e0be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Window width.  <a href="#a404a88b10b7717c17bb3e1736537e0be">More...</a><br /></td></tr>
 <tr class="separator:a404a88b10b7717c17bb3e1736537e0be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54690f112177e17cd1cc6324c41cbc6e"><td class="memItemLeft" align="right" valign="top">const unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_engine.html#a54690f112177e17cd1cc6324c41cbc6e">height</a></td></tr>
+<tr class="memdesc:a54690f112177e17cd1cc6324c41cbc6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Window height.  <a href="#a54690f112177e17cd1cc6324c41cbc6e">More...</a><br /></td></tr>
 <tr class="separator:a54690f112177e17cd1cc6324c41cbc6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:aaff334c6287656a7edf45b985ea62e46"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_engine.html#a1403bad7446a530c96c2503c45e8e0d0">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_engine.html#aaff334c6287656a7edf45b985ea62e46">state</a> = State::SPLASH</td></tr>
+<tr class="memdesc:aaff334c6287656a7edf45b985ea62e46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current game state.  <a href="#aaff334c6287656a7edf45b985ea62e46">More...</a><br /></td></tr>
 <tr class="separator:aaff334c6287656a7edf45b985ea62e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb276e6399d9298beaf32453700f4d44"><td class="memItemLeft" align="right" valign="top">static sf::RenderWindow&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_engine.html#adb276e6399d9298beaf32453700f4d44">window</a></td></tr>
+<tr class="memdesc:adb276e6399d9298beaf32453700f4d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current window.  <a href="#adb276e6399d9298beaf32453700f4d44">More...</a><br /></td></tr>
 <tr class="separator:adb276e6399d9298beaf32453700f4d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class providing global functionality. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a1403bad7446a530c96c2503c45e8e0d0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1403bad7446a530c96c2503c45e8e0d0">&#9670;&nbsp;</a></span>State</h2>
 
@@ -133,11 +150,17 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Current game state. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1403bad7446a530c96c2503c45e8e0d0a130db4abbd5012b174bfa4a945de6f01"></a>SPLASH&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1403bad7446a530c96c2503c45e8e0d0a94d11b0efb0dd62a6fa8d022ad3e8e8d"></a>MAINMENU&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1403bad7446a530c96c2503c45e8e0d0a3d6fcced3122f5d19127659ceee2f1eb"></a>GAME&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1403bad7446a530c96c2503c45e8e0d0a2248b814529182477ae8439d9c63017b"></a>EXIT&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1403bad7446a530c96c2503c45e8e0d0a130db4abbd5012b174bfa4a945de6f01"></a>SPLASH&#160;</td><td class="fielddoc"><p>Start spalsh screen </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1403bad7446a530c96c2503c45e8e0d0a94d11b0efb0dd62a6fa8d022ad3e8e8d"></a>MAINMENU&#160;</td><td class="fielddoc"><p>Main menu </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1403bad7446a530c96c2503c45e8e0d0a3d6fcced3122f5d19127659ceee2f1eb"></a>GAME&#160;</td><td class="fielddoc"><p>Main game loop </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1403bad7446a530c96c2503c45e8e0d0a2248b814529182477ae8439d9c63017b"></a>EXIT&#160;</td><td class="fielddoc"><p><a class="el" href="class_game.html" title="Main class with game main loop. ">Game</a> should close </p>
+</td></tr>
 </table>
 
 </div>
@@ -168,6 +191,8 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates window. </p>
 
 </div>
 </div>
@@ -213,6 +238,8 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>returns texture from name </p>
+
 </div>
 </div>
 <a id="a8763b9d1ce3d84587eba5e6e35a69ed3"></a>
@@ -254,6 +281,8 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Determine object position based on elapsed time and collidable environment. </p>
 
 </div>
 </div>
@@ -297,6 +326,8 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Determine object position based on elapsed time and collidable environment NO GRAVITY. </p>
+
 </div>
 </div>
 <a id="abc9f7a54680725b9b00f0420a4623a30"></a>
@@ -322,6 +353,8 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Makes window borderless. </p>
 
 </div>
 </div>
@@ -359,6 +392,8 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Loads texture to program memmory. </p>
+
 </div>
 </div>
 <a id="abd81f6301f478c3fb1ba42b422e3a716"></a>
@@ -385,6 +420,8 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Makes game fullscreen. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -399,6 +436,8 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Window height. </p>
 
 </div>
 </div>
@@ -422,6 +461,8 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Current game state. </p>
+
 </div>
 </div>
 <a id="a404a88b10b7717c17bb3e1736537e0be"></a>
@@ -435,6 +476,8 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Window width. </p>
 
 </div>
 </div>
@@ -457,6 +500,8 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Current window. </p>
 
 </div>
 </div>
