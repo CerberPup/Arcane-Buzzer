@@ -71,9 +71,6 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Base clase for enabling object animation.  
- <a href="class_animable.html#details">More...</a></p>
-
 <p><code>#include &lt;<a class="el" href="_animable_8h_source.html">Animable.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Animable:</div>
@@ -83,33 +80,27 @@ Inheritance diagram for Animable:</div>
   <map id="Animable_map" name="Animable_map">
 <area href="class_enemy.html" alt="Enemy" shape="rect" coords="0,56,64,80"/>
 <area href="class_player.html" title="Class representing player. " alt="Player" shape="rect" coords="74,56,138,80"/>
-<area href="class_tile.html" title="Class for objects creating map. " alt="Tile" shape="rect" coords="148,56,212,80"/>
+<area href="class_tile.html" alt="Tile" shape="rect" coords="148,56,212,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac124f8ebc91af42034c87de54f1741ae"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animable.html#ac124f8ebc91af42034c87de54f1741ae">canAnimate</a> ()=0</td></tr>
-<tr class="memdesc:ac124f8ebc91af42034c87de54f1741ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if animation is over.  <a href="#ac124f8ebc91af42034c87de54f1741ae">More...</a><br /></td></tr>
 <tr class="separator:ac124f8ebc91af42034c87de54f1741ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeeb68d5917d9ef00e3e89bc498aa361d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animable.html#aeeb68d5917d9ef00e3e89bc498aa361d">Update</a> ()=0</td></tr>
-<tr class="memdesc:aeeb68d5917d9ef00e3e89bc498aa361d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes sprite based on animation and animationcounter.  <a href="#aeeb68d5917d9ef00e3e89bc498aa361d">More...</a><br /></td></tr>
-<tr class="separator:aeeb68d5917d9ef00e3e89bc498aa361d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4aadb33a685af87e5809df48a61717a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animable.html#aa4aadb33a685af87e5809df48a61717a">~Animable</a> ()</td></tr>
 <tr class="separator:aa4aadb33a685af87e5809df48a61717a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeb68d5917d9ef00e3e89bc498aa361d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animable.html#aeeb68d5917d9ef00e3e89bc498aa361d">Update</a> ()=0</td></tr>
+<tr class="separator:aeeb68d5917d9ef00e3e89bc498aa361d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ad7ef9a59ecb0f261095492478df9af63"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animable.html#ad7ef9a59ecb0f261095492478df9af63">animation</a></td></tr>
-<tr class="memdesc:ad7ef9a59ecb0f261095492478df9af63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current animation.  <a href="#ad7ef9a59ecb0f261095492478df9af63">More...</a><br /></td></tr>
 <tr class="separator:ad7ef9a59ecb0f261095492478df9af63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af187b86d7753882ac169cb39d72cc18e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animable.html#af187b86d7753882ac169cb39d72cc18e">animationcounter</a></td></tr>
-<tr class="memdesc:af187b86d7753882ac169cb39d72cc18e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current frame in animation.  <a href="#af187b86d7753882ac169cb39d72cc18e">More...</a><br /></td></tr>
 <tr class="separator:af187b86d7753882ac169cb39d72cc18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Base clase for enabling object animation. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa4aadb33a685af87e5809df48a61717a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa4aadb33a685af87e5809df48a61717a">&#9670;&nbsp;</a></span>~Animable()</h2>
 
@@ -159,9 +150,6 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Determine if animation is over. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if animation is over. </dd></dl>
-
 <p>Implemented in <a class="el" href="class_player.html#a64e0555086f80efbdc4f9f6af29af24b">Player</a>, <a class="el" href="class_tile.html#a23865b9e2b77ce2a700db50a35bc412c">Tile</a>, and <a class="el" href="class_enemy.html#a963d6350c6930b635a104cc846a46aed">Enemy</a>.</p>
 
 </div>
@@ -189,8 +177,6 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Changes sprite based on animation and animationcounter. </p>
-
 <p>Implemented in <a class="el" href="class_player.html#a05b60cac1922c5be5c1be16baffa4497">Player</a>, <a class="el" href="class_tile.html#a3b1fd724b92af12cc6f28edd99a14d01">Tile</a>, and <a class="el" href="class_enemy.html#af9a83b4e458b77eef0ffce785164fbcd">Enemy</a>.</p>
 
 </div>
@@ -208,8 +194,6 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Current animation. </p>
-
 </div>
 </div>
 <a id="af187b86d7753882ac169cb39d72cc18e"></a>
@@ -223,8 +207,6 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Current frame in animation. </p>
 
 </div>
 </div>
