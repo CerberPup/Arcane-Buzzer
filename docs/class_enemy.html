@@ -72,6 +72,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class representing an enemy.  
+ <a href="class_enemy.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_enemy_8h_source.html">Enemy.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Enemy:</div>
@@ -79,10 +82,10 @@ Inheritance diagram for Enemy:</div>
  <div class="center">
   <img src="class_enemy.png" usemap="#Enemy_map" alt=""/>
   <map id="Enemy_map" name="Enemy_map">
-<area href="class_animable.html" alt="Animable" shape="rect" coords="206,0,299,24"/>
-<area href="class_physics.html" alt="Physics" shape="rect" coords="309,0,402,24"/>
-<area href="class_entity.html" alt="Entity" shape="rect" coords="412,0,505,24"/>
-<area href="class_has_life.html" alt="HasLife" shape="rect" coords="515,0,608,24"/>
+<area href="class_animable.html" title="Base clase for enabling object animation. " alt="Animable" shape="rect" coords="206,0,299,24"/>
+<area href="class_physics.html" title="Class for inheritance of objects with physics properties. " alt="Physics" shape="rect" coords="309,0,402,24"/>
+<area href="class_entity.html" title="Class for inheritance of objects with sprites. " alt="Entity" shape="rect" coords="412,0,505,24"/>
+<area href="class_has_life.html" title="Class for inherence of objects that have life. " alt="HasLife" shape="rect" coords="515,0,608,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -91,6 +94,7 @@ Public Types</h2></td></tr>
 <tr class="memitem:a935eb210acafc890add0ba6fdbf65ae7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a935eb210acafc890add0ba6fdbf65ae7">Direction</a> { <a class="el" href="class_enemy.html#a935eb210acafc890add0ba6fdbf65ae7a5ad699222bc15b0d77a4de1c34e16970">RIGHT</a>, 
 <a class="el" href="class_enemy.html#a935eb210acafc890add0ba6fdbf65ae7a354871d3383fe11e4205de3088d1ded8">LEFT</a>
  }</td></tr>
+<tr class="memdesc:a935eb210acafc890add0ba6fdbf65ae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum for animation, representing the direction of enemy's movement.  <a href="class_enemy.html#a935eb210acafc890add0ba6fdbf65ae7">More...</a><br /></td></tr>
 <tr class="separator:a935eb210acafc890add0ba6fdbf65ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_class_physics"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_physics')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="class_physics.html">Physics</a></td></tr>
 <tr class="memitem:a3a5a3167d35d3e3108d6b5ae788e5077 inherit pub_types_class_physics"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a3a5a3167d35d3e3108d6b5ae788e5077">SIDE</a> { <a class="el" href="class_physics.html#a3a5a3167d35d3e3108d6b5ae788e5077acf8a6aed498953ab3a57ba226addd48b">TOP</a>, 
@@ -98,23 +102,30 @@ Public Types</h2></td></tr>
 <a class="el" href="class_physics.html#a3a5a3167d35d3e3108d6b5ae788e5077abf8fe9d8eaa327b6a36a842681b7cea0">LEFT</a>, 
 <a class="el" href="class_physics.html#a3a5a3167d35d3e3108d6b5ae788e5077a52ef723ba26e00c756f43e4a9b540633">RIGHT</a>
  }</td></tr>
+<tr class="memdesc:a3a5a3167d35d3e3108d6b5ae788e5077"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to determine object side position.  <a href="class_physics.html#a3a5a3167d35d3e3108d6b5ae788e5077">More...</a><br /></td></tr>
 <tr class="separator:a3a5a3167d35d3e3108d6b5ae788e5077 inherit pub_types_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a963d6350c6930b635a104cc846a46aed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a963d6350c6930b635a104cc846a46aed">canAnimate</a> ()</td></tr>
+<tr class="memdesc:a963d6350c6930b635a104cc846a46aed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if animation is over.  <a href="#a963d6350c6930b635a104cc846a46aed">More...</a><br /></td></tr>
 <tr class="separator:a963d6350c6930b635a104cc846a46aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d0648d5ff4f7fb6a4338f1b20295278"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a0d0648d5ff4f7fb6a4338f1b20295278">Face</a> (<a class="el" href="class_enemy.html#a935eb210acafc890add0ba6fdbf65ae7">Direction</a> d)</td></tr>
+<tr class="memdesc:a0d0648d5ff4f7fb6a4338f1b20295278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes enemys orientation.  <a href="#a0d0648d5ff4f7fb6a4338f1b20295278">More...</a><br /></td></tr>
 <tr class="separator:a0d0648d5ff4f7fb6a4338f1b20295278"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85e0f1963955315f9b6a8ba340633452"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a85e0f1963955315f9b6a8ba340633452">kaputt</a> ()</td></tr>
+<tr class="memdesc:a85e0f1963955315f9b6a8ba340633452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts enemys dying animation and kills it.  <a href="#a85e0f1963955315f9b6a8ba340633452">More...</a><br /></td></tr>
 <tr class="separator:a85e0f1963955315f9b6a8ba340633452"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9a83b4e458b77eef0ffce785164fbcd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#af9a83b4e458b77eef0ffce785164fbcd">Update</a> ()</td></tr>
+<tr class="memdesc:af9a83b4e458b77eef0ffce785164fbcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates sprite to next frame.  <a href="#af9a83b4e458b77eef0ffce785164fbcd">More...</a><br /></td></tr>
 <tr class="separator:af9a83b4e458b77eef0ffce785164fbcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b5bc8c18e075e063dfe28887b6059ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a6b5bc8c18e075e063dfe28887b6059ab">Enemy</a> (sf::Vector2f position)</td></tr>
 <tr class="separator:a6b5bc8c18e075e063dfe28887b6059ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64f0cc0fafccf4b348de1ec8c78506e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a64f0cc0fafccf4b348de1ec8c78506e9">actualizePosition</a> (sf::Vector2f pos)</td></tr>
+<tr class="memdesc:a64f0cc0fafccf4b348de1ec8c78506e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualizes the last know position.  <a href="#a64f0cc0fafccf4b348de1ec8c78506e9">More...</a><br /></td></tr>
 <tr class="separator:a64f0cc0fafccf4b348de1ec8c78506e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5b572843d54c4f75c25aad7ca244726"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#af5b572843d54c4f75c25aad7ca244726">checkPosition</a> (sf::Vector2f pos)</td></tr>
+<tr class="memdesc:af5b572843d54c4f75c25aad7ca244726"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the last known position equals actual position.  <a href="#af5b572843d54c4f75c25aad7ca244726">More...</a><br /></td></tr>
 <tr class="separator:af5b572843d54c4f75c25aad7ca244726"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0eec4755e28c02688065f9657150ac3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#ac0eec4755e28c02688065f9657150ac3">~Enemy</a> ()</td></tr>
 <tr class="separator:ac0eec4755e28c02688065f9657150ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,41 +137,57 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad73203ecebad116bc9f380a9fce90306 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cf4825b218362d2b7f039fe766a0856 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a9cf4825b218362d2b7f039fe766a0856">Physics</a> (float _friction, sf::Vector2f _position, float _maxXVelocity, sf::Vector2f _velocity, sf::Vector2f _size=sf::Vector2f(0, 0), sf::Vector2f _offset=sf::Vector2f(0, 0))</td></tr>
 <tr class="separator:a9cf4825b218362d2b7f039fe766a0856 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7939f065f0aae8a73590aec8d0a0e431 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a7939f065f0aae8a73590aec8d0a0e431">Physics</a> (sf::Vector2f _position, sf::Vector2f _size, sf::Vector2f _offset=sf::Vector2f(0, 0))</td></tr>
-<tr class="separator:a7939f065f0aae8a73590aec8d0a0e431 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af31f6715d338aee7e87175c4ff7d4aab inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#af31f6715d338aee7e87175c4ff7d4aab">Physics</a> (sf::Vector2f _position, sf::Vector2f _size, bool _shouldColide=true, sf::Vector2f _offset=sf::Vector2f(0, 0))</td></tr>
 <tr class="separator:af31f6715d338aee7e87175c4ff7d4aab inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7939f065f0aae8a73590aec8d0a0e431 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a7939f065f0aae8a73590aec8d0a0e431">Physics</a> (sf::Vector2f _position, sf::Vector2f _size, sf::Vector2f _offset=sf::Vector2f(0, 0))</td></tr>
+<tr class="separator:a7939f065f0aae8a73590aec8d0a0e431 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7112459126050e6db0fafb287fbc6f1 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">sf::FloatRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ac7112459126050e6db0fafb287fbc6f1">getRect</a> ()</td></tr>
+<tr class="memdesc:ac7112459126050e6db0fafb287fbc6f1 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns object rectangle.  <a href="class_physics.html#ac7112459126050e6db0fafb287fbc6f1">More...</a><br /></td></tr>
 <tr class="separator:ac7112459126050e6db0fafb287fbc6f1 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d10ce3f2161d7cce8d7e15b4fc110df inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">sf::Vector2i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a9d10ce3f2161d7cce8d7e15b4fc110df">getCoord</a> ()</td></tr>
+<tr class="memdesc:a9d10ce3f2161d7cce8d7e15b4fc110df inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns object position.  <a href="class_physics.html#a9d10ce3f2161d7cce8d7e15b4fc110df">More...</a><br /></td></tr>
 <tr class="separator:a9d10ce3f2161d7cce8d7e15b4fc110df inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad85a3df693d588f8ff528566c5218533 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ad85a3df693d588f8ff528566c5218533">getFriction</a> ()</td></tr>
+<tr class="memdesc:ad85a3df693d588f8ff528566c5218533 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns object friction.  <a href="class_physics.html#ad85a3df693d588f8ff528566c5218533">More...</a><br /></td></tr>
 <tr class="separator:ad85a3df693d588f8ff528566c5218533 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7030afbd6b5dd2ab334bbbeff16271a inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ad7030afbd6b5dd2ab334bbbeff16271a">getPos</a> ()</td></tr>
+<tr class="memdesc:ad7030afbd6b5dd2ab334bbbeff16271a inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns object position.  <a href="class_physics.html#ad7030afbd6b5dd2ab334bbbeff16271a">More...</a><br /></td></tr>
 <tr class="separator:ad7030afbd6b5dd2ab334bbbeff16271a inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c0d2a818c79d3b11fc597cdd6411b5c inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a5c0d2a818c79d3b11fc597cdd6411b5c">getVelocity</a> ()</td></tr>
+<tr class="memdesc:a5c0d2a818c79d3b11fc597cdd6411b5c inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns object velocity.  <a href="class_physics.html#a5c0d2a818c79d3b11fc597cdd6411b5c">More...</a><br /></td></tr>
 <tr class="separator:a5c0d2a818c79d3b11fc597cdd6411b5c inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1992494c6213f00aa3865865ef9a12f inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ab1992494c6213f00aa3865865ef9a12f">setFriction</a> (float _friction)</td></tr>
+<tr class="memdesc:ab1992494c6213f00aa3865865ef9a12f inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets object friction.  <a href="class_physics.html#ab1992494c6213f00aa3865865ef9a12f">More...</a><br /></td></tr>
 <tr class="separator:ab1992494c6213f00aa3865865ef9a12f inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ca953c0dfe3030f5cc8d4a14dc566e4 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a6ca953c0dfe3030f5cc8d4a14dc566e4">setPosition</a> (sf::Vector2f _position)</td></tr>
+<tr class="memdesc:a6ca953c0dfe3030f5cc8d4a14dc566e4 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets object position.  <a href="class_physics.html#a6ca953c0dfe3030f5cc8d4a14dc566e4">More...</a><br /></td></tr>
 <tr class="separator:a6ca953c0dfe3030f5cc8d4a14dc566e4 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9922eb23115f5b3c82863ed008626cd4 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a9922eb23115f5b3c82863ed008626cd4">setVelocity</a> (sf::Vector2f _velocity)</td></tr>
+<tr class="memdesc:a9922eb23115f5b3c82863ed008626cd4 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets object velocity.  <a href="class_physics.html#a9922eb23115f5b3c82863ed008626cd4">More...</a><br /></td></tr>
 <tr class="separator:a9922eb23115f5b3c82863ed008626cd4 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59cfd3aa8ef7fa6c9374b2efeefe89c2 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a59cfd3aa8ef7fa6c9374b2efeefe89c2">setVelocityX</a> (float x)</td></tr>
+<tr class="memdesc:a59cfd3aa8ef7fa6c9374b2efeefe89c2 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets object horizontal velocity.  <a href="class_physics.html#a59cfd3aa8ef7fa6c9374b2efeefe89c2">More...</a><br /></td></tr>
 <tr class="separator:a59cfd3aa8ef7fa6c9374b2efeefe89c2 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f876f27a29447f899b1b2b082aedfc0 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a2f876f27a29447f899b1b2b082aedfc0">setVelocityY</a> (float y)</td></tr>
+<tr class="memdesc:a2f876f27a29447f899b1b2b082aedfc0 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets object vertical velocity.  <a href="class_physics.html#a2f876f27a29447f899b1b2b082aedfc0">More...</a><br /></td></tr>
 <tr class="separator:a2f876f27a29447f899b1b2b082aedfc0 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf8ad7abd52ec1cbdaaad9f16c0243b4 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#acf8ad7abd52ec1cbdaaad9f16c0243b4">addVelocity</a> (sf::Vector2f _velocity)</td></tr>
+<tr class="memdesc:acf8ad7abd52ec1cbdaaad9f16c0243b4 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds velocity to object, capped at maxXVelocity value.  <a href="class_physics.html#acf8ad7abd52ec1cbdaaad9f16c0243b4">More...</a><br /></td></tr>
 <tr class="separator:acf8ad7abd52ec1cbdaaad9f16c0243b4 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab55c2f723c28adef0c77b7ce0d98ca83 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ab55c2f723c28adef0c77b7ce0d98ca83">getColisionPossibility</a> ()</td></tr>
+<tr class="memdesc:ab55c2f723c28adef0c77b7ce0d98ca83 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if object might colide.  <a href="class_physics.html#ab55c2f723c28adef0c77b7ce0d98ca83">More...</a><br /></td></tr>
 <tr class="separator:ab55c2f723c28adef0c77b7ce0d98ca83 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad061fb6533d8f78f76acef6dc9aee9e inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#aad061fb6533d8f78f76acef6dc9aee9e">getMaxXVelocity</a> ()</td></tr>
+<tr class="memdesc:aad061fb6533d8f78f76acef6dc9aee9e inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns max horizontal velocity.  <a href="class_physics.html#aad061fb6533d8f78f76acef6dc9aee9e">More...</a><br /></td></tr>
 <tr class="separator:aad061fb6533d8f78f76acef6dc9aee9e inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1420a9ae3d55c2fd8df9709da52b762 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#aa1420a9ae3d55c2fd8df9709da52b762">move</a> (sf::Vector2f _position)</td></tr>
+<tr class="memdesc:aa1420a9ae3d55c2fd8df9709da52b762 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move object to position.  <a href="class_physics.html#aa1420a9ae3d55c2fd8df9709da52b762">More...</a><br /></td></tr>
 <tr class="separator:aa1420a9ae3d55c2fd8df9709da52b762 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae916d5bb42f5ac114ebf68ab8cbf6184 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ae916d5bb42f5ac114ebf68ab8cbf6184">move</a> (float X, float Y)</td></tr>
+<tr class="memdesc:ae916d5bb42f5ac114ebf68ab8cbf6184 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move object to position.  <a href="class_physics.html#ae916d5bb42f5ac114ebf68ab8cbf6184">More...</a><br /></td></tr>
 <tr class="separator:ae916d5bb42f5ac114ebf68ab8cbf6184 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a237487075f8dd7bccc91ad6a99ccb856 inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a237487075f8dd7bccc91ad6a99ccb856">drawColisionBox</a> ()</td></tr>
+<tr class="memdesc:a237487075f8dd7bccc91ad6a99ccb856 inherit pub_methods_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws collision box around object.  <a href="class_physics.html#a237487075f8dd7bccc91ad6a99ccb856">More...</a><br /></td></tr>
 <tr class="separator:a237487075f8dd7bccc91ad6a99ccb856 inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a045c3788e28059d3920136499942490f inherit pub_methods_class_physics"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a045c3788e28059d3920136499942490f">~Physics</a> ()</td></tr>
 <tr class="separator:a045c3788e28059d3920136499942490f inherit pub_methods_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,8 +198,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adf6d3f7cb1b2ba029b6b048a395cc8ae inherit pub_methods_class_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_has_life"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_has_life')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_has_life.html">HasLife</a></td></tr>
 <tr class="memitem:ad490cd3fb0693d6de69052de2720fdd9 inherit pub_methods_class_has_life"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_has_life.html#ad490cd3fb0693d6de69052de2720fdd9">HasLife</a> (int _hp, int _damageCoolDown)</td></tr>
+<tr class="memdesc:ad490cd3fb0693d6de69052de2720fdd9 inherit pub_methods_class_has_life"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize HP and damageCooldownReset variable.  <a href="class_has_life.html#ad490cd3fb0693d6de69052de2720fdd9">More...</a><br /></td></tr>
 <tr class="separator:ad490cd3fb0693d6de69052de2720fdd9 inherit pub_methods_class_has_life"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4987dd5874a845f8cfbd0d65cad42307 inherit pub_methods_class_has_life"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_has_life.html#a4987dd5874a845f8cfbd0d65cad42307">TakeDamage</a> ()</td></tr>
+<tr class="memdesc:a4987dd5874a845f8cfbd0d65cad42307 inherit pub_methods_class_has_life"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrese HP and lock tooking damage.  <a href="class_has_life.html#a4987dd5874a845f8cfbd0d65cad42307">More...</a><br /></td></tr>
 <tr class="separator:a4987dd5874a845f8cfbd0d65cad42307 inherit pub_methods_class_has_life"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c1bed09e6d2f7e47c9f44b8891d1a74 inherit pub_methods_class_has_life"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_has_life.html#a2c1bed09e6d2f7e47c9f44b8891d1a74">~HasLife</a> ()</td></tr>
 <tr class="separator:a2c1bed09e6d2f7e47c9f44b8891d1a74 inherit pub_methods_class_has_life"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,37 +209,52 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a618f81e1b1513ebdbf51790658c5fc79"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a618f81e1b1513ebdbf51790658c5fc79">state</a></td></tr>
+<tr class="memdesc:a618f81e1b1513ebdbf51790658c5fc79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines state of the nenemy (alive, dying or dead)  <a href="#a618f81e1b1513ebdbf51790658c5fc79">More...</a><br /></td></tr>
 <tr class="separator:a618f81e1b1513ebdbf51790658c5fc79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5a8b615c36bbcfde07200d2ee8443a3"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#ae5a8b615c36bbcfde07200d2ee8443a3">oldPosition</a></td></tr>
+<tr class="memdesc:ae5a8b615c36bbcfde07200d2ee8443a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last known position of the enemy before updating.  <a href="#ae5a8b615c36bbcfde07200d2ee8443a3">More...</a><br /></td></tr>
 <tr class="separator:ae5a8b615c36bbcfde07200d2ee8443a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1e6332a7727f8a8076060aa8cdbe763"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_enemy.html#a935eb210acafc890add0ba6fdbf65ae7">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#af1e6332a7727f8a8076060aa8cdbe763">lastDir</a></td></tr>
+<tr class="memdesc:af1e6332a7727f8a8076060aa8cdbe763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Previous frame looking direction.  <a href="#af1e6332a7727f8a8076060aa8cdbe763">More...</a><br /></td></tr>
 <tr class="separator:af1e6332a7727f8a8076060aa8cdbe763"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14aaebf81552db5cf6983e244bd83b6d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a14aaebf81552db5cf6983e244bd83b6d">notMoving</a></td></tr>
+<tr class="memdesc:a14aaebf81552db5cf6983e244bd83b6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of frames the enemy has stayed in the same position.  <a href="#a14aaebf81552db5cf6983e244bd83b6d">More...</a><br /></td></tr>
 <tr class="separator:a14aaebf81552db5cf6983e244bd83b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_animable"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_animable')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_animable.html">Animable</a></td></tr>
 <tr class="memitem:ad7ef9a59ecb0f261095492478df9af63 inherit pub_attribs_class_animable"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animable.html#ad7ef9a59ecb0f261095492478df9af63">animation</a></td></tr>
+<tr class="memdesc:ad7ef9a59ecb0f261095492478df9af63 inherit pub_attribs_class_animable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current animation.  <a href="class_animable.html#ad7ef9a59ecb0f261095492478df9af63">More...</a><br /></td></tr>
 <tr class="separator:ad7ef9a59ecb0f261095492478df9af63 inherit pub_attribs_class_animable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af187b86d7753882ac169cb39d72cc18e inherit pub_attribs_class_animable"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_animable.html#af187b86d7753882ac169cb39d72cc18e">animationcounter</a></td></tr>
+<tr class="memdesc:af187b86d7753882ac169cb39d72cc18e inherit pub_attribs_class_animable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current frame in animation.  <a href="class_animable.html#af187b86d7753882ac169cb39d72cc18e">More...</a><br /></td></tr>
 <tr class="separator:af187b86d7753882ac169cb39d72cc18e inherit pub_attribs_class_animable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_physics"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_physics')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_physics.html">Physics</a></td></tr>
 <tr class="memitem:ac084b00ff210e21f51d0b3cf2f0c7361 inherit pub_attribs_class_physics"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#ac084b00ff210e21f51d0b3cf2f0c7361">lock</a></td></tr>
+<tr class="memdesc:ac084b00ff210e21f51d0b3cf2f0c7361 inherit pub_attribs_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to lock velocity modifications.  <a href="class_physics.html#ac084b00ff210e21f51d0b3cf2f0c7361">More...</a><br /></td></tr>
 <tr class="separator:ac084b00ff210e21f51d0b3cf2f0c7361 inherit pub_attribs_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a925599380dd9204a8a50f900f305e7eb inherit pub_attribs_class_physics"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_physics.html#a925599380dd9204a8a50f900f305e7eb">onGround</a></td></tr>
+<tr class="memdesc:a925599380dd9204a8a50f900f305e7eb inherit pub_attribs_class_physics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can jump?  <a href="class_physics.html#a925599380dd9204a8a50f900f305e7eb">More...</a><br /></td></tr>
 <tr class="separator:a925599380dd9204a8a50f900f305e7eb inherit pub_attribs_class_physics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_entity"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_entity')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_entity.html">Entity</a></td></tr>
 <tr class="memitem:a48ef4ab143b8d0211877c9f6be42e824 inherit pub_attribs_class_entity"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a48ef4ab143b8d0211877c9f6be42e824">sprite</a></td></tr>
+<tr class="memdesc:a48ef4ab143b8d0211877c9f6be42e824 inherit pub_attribs_class_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps sprite.  <a href="class_entity.html#a48ef4ab143b8d0211877c9f6be42e824">More...</a><br /></td></tr>
 <tr class="separator:a48ef4ab143b8d0211877c9f6be42e824 inherit pub_attribs_class_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_has_life"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_has_life')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_has_life.html">HasLife</a></td></tr>
 <tr class="memitem:a5b00b04406938d32ffe2da0c663fc2d0 inherit pub_attribs_class_has_life"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_has_life.html#a5b00b04406938d32ffe2da0c663fc2d0">HP</a></td></tr>
+<tr class="memdesc:a5b00b04406938d32ffe2da0c663fc2d0 inherit pub_attribs_class_has_life"><td class="mdescLeft">&#160;</td><td class="mdescRight">Health points left.  <a href="class_has_life.html#a5b00b04406938d32ffe2da0c663fc2d0">More...</a><br /></td></tr>
 <tr class="separator:a5b00b04406938d32ffe2da0c663fc2d0 inherit pub_attribs_class_has_life"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7cefb1094687cffafe89d91397aa625 inherit pub_attribs_class_has_life"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_has_life.html#af7cefb1094687cffafe89d91397aa625">damageCooldown</a></td></tr>
+<tr class="memdesc:af7cefb1094687cffafe89d91397aa625 inherit pub_attribs_class_has_life"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of ticks until object can take damage again.  <a href="class_has_life.html#af7cefb1094687cffafe89d91397aa625">More...</a><br /></td></tr>
 <tr class="separator:af7cefb1094687cffafe89d91397aa625 inherit pub_attribs_class_has_life"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a829d315607fc78bd436396e0d48e0653 inherit pub_attribs_class_has_life"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_has_life.html#a829d315607fc78bd436396e0d48e0653">damageCooldownReset</a></td></tr>
+<tr class="memdesc:a829d315607fc78bd436396e0d48e0653 inherit pub_attribs_class_has_life"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of ticks of invulnerability of object.  <a href="class_has_life.html#a829d315607fc78bd436396e0d48e0653">More...</a><br /></td></tr>
 <tr class="separator:a829d315607fc78bd436396e0d48e0653 inherit pub_attribs_class_has_life"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d1aaf67456661dd56e6679fcd4065d6 inherit pub_attribs_class_has_life"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_has_life.html#a2d1aaf67456661dd56e6679fcd4065d6">tookDamage</a></td></tr>
+<tr class="memdesc:a2d1aaf67456661dd56e6679fcd4065d6 inherit pub_attribs_class_has_life"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to lock taking damage for period of ticks.  <a href="class_has_life.html#a2d1aaf67456661dd56e6679fcd4065d6">More...</a><br /></td></tr>
 <tr class="separator:a2d1aaf67456661dd56e6679fcd4065d6 inherit pub_attribs_class_has_life"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class representing an enemy. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a935eb210acafc890add0ba6fdbf65ae7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a935eb210acafc890add0ba6fdbf65ae7">&#9670;&nbsp;</a></span>Direction</h2>
 
@@ -222,6 +266,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enum for animation, representing the direction of enemy's movement. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a935eb210acafc890add0ba6fdbf65ae7a5ad699222bc15b0d77a4de1c34e16970"></a>RIGHT&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a935eb210acafc890add0ba6fdbf65ae7a354871d3383fe11e4205de3088d1ded8"></a>LEFT&#160;</td><td class="fielddoc"></td></tr>
@@ -282,6 +328,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Actualizes the last know position. </p>
+
 </div>
 </div>
 <a id="a963d6350c6930b635a104cc846a46aed"></a>
@@ -307,6 +355,9 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Determine if animation is over. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if animation is over. </dd></dl>
+
 <p>Implements <a class="el" href="class_animable.html#ac124f8ebc91af42034c87de54f1741ae">Animable</a>.</p>
 
 </div>
@@ -327,6 +378,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Checks if the last known position equals actual position. </p>
+
 </div>
 </div>
 <a id="a0d0648d5ff4f7fb6a4338f1b20295278"></a>
@@ -345,6 +398,14 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Changes enemys orientation. </p>
+<p>Mirrors enemys sprite by applying transformation. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td>Direction to set enemys orientation </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a85e0f1963955315f9b6a8ba340633452"></a>
@@ -361,6 +422,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Starts enemys dying animation and kills it. </p>
 
 </div>
 </div>
@@ -387,6 +450,8 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Updates sprite to next frame. </p>
+
 <p>Implements <a class="el" href="class_animable.html#aeeb68d5917d9ef00e3e89bc498aa361d">Animable</a>.</p>
 
 </div>
@@ -404,6 +469,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Previous frame looking direction. </p>
+
 </div>
 </div>
 <a id="a14aaebf81552db5cf6983e244bd83b6d"></a>
@@ -417,6 +484,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Number of frames the enemy has stayed in the same position. </p>
 
 </div>
 </div>
@@ -432,6 +501,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Last known position of the enemy before updating. </p>
+
 </div>
 </div>
 <a id="a618f81e1b1513ebdbf51790658c5fc79"></a>
@@ -446,11 +517,13 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Determines state of the nenemy (alive, dying or dead) </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/git/Arcane-Inscriber/ArcaneInscriber/ArcaneInscriber/<a class="el" href="_enemy_8h_source.html">Enemy.h</a></li>
-<li>D:/git/Arcane-Inscriber/ArcaneInscriber/ArcaneInscriber/<a class="el" href="_enemy_8cpp.html">Enemy.cpp</a></li>
+<li>ArcaneInscriber/ArcaneInscriber/<a class="el" href="_enemy_8h_source.html">Enemy.h</a></li>
+<li>ArcaneInscriber/ArcaneInscriber/<a class="el" href="_enemy_8cpp.html">Enemy.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -71,6 +71,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class for inherence of objects that have life.  
+ <a href="class_has_life.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_has_life_8h_source.html">HasLife.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for HasLife:</div>
@@ -78,7 +81,7 @@ Inheritance diagram for HasLife:</div>
  <div class="center">
   <img src="class_has_life.png" usemap="#HasLife_map" alt=""/>
   <map id="HasLife_map" name="HasLife_map">
-<area href="class_enemy.html" alt="Enemy" shape="rect" coords="0,56,55,80"/>
+<area href="class_enemy.html" title="Class representing an enemy. " alt="Enemy" shape="rect" coords="0,56,55,80"/>
 <area href="class_player.html" title="Class representing player. " alt="Player" shape="rect" coords="65,56,120,80"/>
 </map>
  </div></div>
@@ -86,8 +89,10 @@ Inheritance diagram for HasLife:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad490cd3fb0693d6de69052de2720fdd9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_has_life.html#ad490cd3fb0693d6de69052de2720fdd9">HasLife</a> (int _hp, int _damageCoolDown)</td></tr>
+<tr class="memdesc:ad490cd3fb0693d6de69052de2720fdd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize HP and damageCooldownReset variable.  <a href="#ad490cd3fb0693d6de69052de2720fdd9">More...</a><br /></td></tr>
 <tr class="separator:ad490cd3fb0693d6de69052de2720fdd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4987dd5874a845f8cfbd0d65cad42307"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_has_life.html#a4987dd5874a845f8cfbd0d65cad42307">TakeDamage</a> ()</td></tr>
+<tr class="memdesc:a4987dd5874a845f8cfbd0d65cad42307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrese HP and lock tooking damage.  <a href="#a4987dd5874a845f8cfbd0d65cad42307">More...</a><br /></td></tr>
 <tr class="separator:a4987dd5874a845f8cfbd0d65cad42307"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c1bed09e6d2f7e47c9f44b8891d1a74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_has_life.html#a2c1bed09e6d2f7e47c9f44b8891d1a74">~HasLife</a> ()</td></tr>
 <tr class="separator:a2c1bed09e6d2f7e47c9f44b8891d1a74"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -95,15 +100,21 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a5b00b04406938d32ffe2da0c663fc2d0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_has_life.html#a5b00b04406938d32ffe2da0c663fc2d0">HP</a></td></tr>
+<tr class="memdesc:a5b00b04406938d32ffe2da0c663fc2d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Health points left.  <a href="#a5b00b04406938d32ffe2da0c663fc2d0">More...</a><br /></td></tr>
 <tr class="separator:a5b00b04406938d32ffe2da0c663fc2d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7cefb1094687cffafe89d91397aa625"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_has_life.html#af7cefb1094687cffafe89d91397aa625">damageCooldown</a></td></tr>
+<tr class="memdesc:af7cefb1094687cffafe89d91397aa625"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of ticks until object can take damage again.  <a href="#af7cefb1094687cffafe89d91397aa625">More...</a><br /></td></tr>
 <tr class="separator:af7cefb1094687cffafe89d91397aa625"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a829d315607fc78bd436396e0d48e0653"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_has_life.html#a829d315607fc78bd436396e0d48e0653">damageCooldownReset</a></td></tr>
+<tr class="memdesc:a829d315607fc78bd436396e0d48e0653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of ticks of invulnerability of object.  <a href="#a829d315607fc78bd436396e0d48e0653">More...</a><br /></td></tr>
 <tr class="separator:a829d315607fc78bd436396e0d48e0653"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d1aaf67456661dd56e6679fcd4065d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_has_life.html#a2d1aaf67456661dd56e6679fcd4065d6">tookDamage</a></td></tr>
+<tr class="memdesc:a2d1aaf67456661dd56e6679fcd4065d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to lock taking damage for period of ticks.  <a href="#a2d1aaf67456661dd56e6679fcd4065d6">More...</a><br /></td></tr>
 <tr class="separator:a2d1aaf67456661dd56e6679fcd4065d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class for inherence of objects that have life. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad490cd3fb0693d6de69052de2720fdd9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad490cd3fb0693d6de69052de2720fdd9">&#9670;&nbsp;</a></span>HasLife()</h2>
 
@@ -129,6 +140,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialize HP and damageCooldownReset variable. </p>
 
 </div>
 </div>
@@ -165,6 +178,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Decrese HP and lock tooking damage. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -180,6 +195,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Number of ticks until object can take damage again. </p>
+
 </div>
 </div>
 <a id="a829d315607fc78bd436396e0d48e0653"></a>
@@ -193,6 +210,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Number of ticks of invulnerability of object. </p>
 
 </div>
 </div>
@@ -208,6 +227,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Health points left. </p>
+
 </div>
 </div>
 <a id="a2d1aaf67456661dd56e6679fcd4065d6"></a>
@@ -222,11 +243,13 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Used to lock taking damage for period of ticks. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/git/Arcane-Inscriber/ArcaneInscriber/ArcaneInscriber/<a class="el" href="_has_life_8h_source.html">HasLife.h</a></li>
-<li>D:/git/Arcane-Inscriber/ArcaneInscriber/ArcaneInscriber/<a class="el" href="_has_life_8cpp.html">HasLife.cpp</a></li>
+<li>ArcaneInscriber/ArcaneInscriber/<a class="el" href="_has_life_8h_source.html">HasLife.h</a></li>
+<li>ArcaneInscriber/ArcaneInscriber/<a class="el" href="_has_life_8cpp.html">HasLife.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
